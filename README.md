@@ -1,8 +1,11 @@
 # Drona 🚁
+*A custom autonomous drone framework by **Unmanned Systems**.*
+
+<img src="assets/UMSE-logo-black.png" align="right" width="250px" alt="Unmanned Systems Logo">
 
 Drona is a customized, open-source [ROS](https://www.ros.org)-based framework designed to provide user-friendly tools for controlling [PX4](https://px4.io)-powered drones. 
 
-Built as a specialized fork of the powerful [Clover platform](https://github.com/CopterExpress/clover), Drona is optimized for custom hardware integrations and edge-computing applications. It can be installed as a standard ROS Noetic package or run via our preconfigured Raspberry Pi image.
+Built and maintained by **Unmanned Systems** as a specialized fork of the powerful [Clover platform](https://github.com/CopterExpress/clover), Drona is optimized for custom hardware integrations and edge-computing applications. It can be installed as a standard ROS Noetic package or run via our preconfigured Raspberry Pi image.
 
 ## Features
 * **ROS Noetic** integration out-of-the-box.
