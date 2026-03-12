@@ -2,7 +2,7 @@
 
 [Image](image.md) version v0.20 includes significant changes in comparison with the version 0.19. When transitioning please note the changes presented below.
 
-## ROS package `clever` is renamed to `clover`
+## ROS package `clever` is renamed to `drona`
 
 All the imports in Python scripts should be changed.
 
@@ -32,7 +32,7 @@ After:
 
 ```python
 import rospy
-from clover import srv
+from drona import srv
 from std_srvs.srv import Trigger
 
 rospy.init_node('flight')
@@ -50,7 +50,7 @@ land = rospy.ServiceProxy('land', Trigger)
 navigate(x=0, y=0, z=1, frame_id='body', auto_arm=True)
 ```
 
-## systemd service `clever` is renamed to `clover`
+## systemd service `clever` is renamed to `drona`
 
 For restarting the platform instead of:
 
@@ -61,18 +61,18 @@ sudo systemctl restart clever
 use command:
 
 ```bash
-sudo systemctl restart clover
+sudo systemctl restart drona
 ```
 
 ## Path to platform's files changed
 
-The `~/catkin_ws/src/clever/` directory is renamed to `~/catkin_ws/src/clover`. Thus, configuration files (`*.launch`) are to be edited using the new path.
+The `~/catkin_ws/src/clever/` directory is renamed to `~/catkin_ws/src/drona`. Thus, configuration files (`*.launch`) are to be edited using the new path.
 
-For example, `~/catkin_ws/src/clever/clever/launch/clever.launch` file is now `~/catkin_ws/src/clover/clover/launch/clover.launch`.
+For example, `~/catkin_ws/src/clever/clever/launch/clever.launch` file is now `~/catkin_ws/src/drona/drona/launch/drona.launch`.
 
 ## Wi-Fi network configuration
 
-Wi-Fi networks' SSID is changed to `clover-XXXX` (where X is a random number), password is changed to `cloverwifi`.
+Wi-Fi networks' SSID is changed to `drona-XXXX` (where X is a random number), password is changed to `dronawifi`.
 
 ## The camera orientation configuration changed
 

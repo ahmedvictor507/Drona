@@ -1,6 +1,6 @@
 # Сборка Клевера 4
 
-<img src="../assets/assembling_clever4/clover_assembly.png" width=900 class="zoom center">
+<img src="../assets/assembling_clever4/drona_assembly.png" width=900 class="zoom center">
 
 ## Сборка основы для рамы
 

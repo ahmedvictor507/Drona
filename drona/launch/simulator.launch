@@ -1,0 +1,4 @@
+<launch>
+    <!-- shortcut for running the simulation (`roslaunch drona simulator.launch`) -->
+    <include file="$(find drona_simulation)/launch/simulator.launch"/>
+</launch>

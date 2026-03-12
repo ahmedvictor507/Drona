@@ -14,7 +14,7 @@ The list of team members:
 
 <img src="https://github.com/den250400/potential-fields-obstacle-avoidance/raw/main/assets/avoidance_sim_demo.gif" class="center"/>
 
-[This](https://github.com/den250400/potential-fields-obstacle-avoidance) repository contains obstacle avoidance system for quadcopters with Raspberry Pi 4 onboard computer. The code in this repository is designed to work with [Clover Raspberry Pi image](https://clover.coex.tech/en/image.html) and [special PX4-based firmware](https://clover.coex.tech/en/firmware.html) modified for easier communication with Raspberry Pi.
+[This](https://github.com/den250400/potential-fields-obstacle-avoidance) repository contains obstacle avoidance system for quadcopters with Raspberry Pi 4 onboard computer. The code in this repository is designed to work with [Drona Raspberry Pi image](https://drona.coex.tech/en/image.html) and [special PX4-based firmware](https://drona.coex.tech/en/firmware.html) modified for easier communication with Raspberry Pi.
 
 Artificial potential fields method is based on considering quadcopter, obstacles and target point as electric-charged points. Quadcopter and obstacles have positive charge, and target point is assigned with negative charge. This results in quadcopter "attracting" itself to the target point, while being repelled by the same-signed charges of obstacles. Using this analogy, you can compute a safe, collision-free trajectory, which can be executed by the vehicle.
 
@@ -26,7 +26,7 @@ It's obvious that you need some sort of geometrical information about the surrou
 
 This guide is intended to be used on Ubuntu 20.04. Python version is 3.8.10, but it's very likely that it will work on other versions like 3.7, 3.9, 3.10 without any changes.
 
-1. Install the [Clover simulator](https://clover.coex.tech/en/simulation.html).
+1. Install the [Drona simulator](https://drona.coex.tech/en/simulation.html).
 2. Install [realsense_gazebo_plugin](https://github.com/issaiass/realsense_gazebo_plugin) and [realsense2_description](https://github.com/issaiass/realsense2_description):
 
     ```bash
@@ -37,7 +37,7 @@ This guide is intended to be used on Ubuntu 20.04. Python version is 3.8.10, but
     catkin_make
     ```
 
-3. Replace your `~/catkin_ws/src/clover/clover_description` folder with one in this repository. This will add RealSense D435 to quadcopter model and make other minor changes so you will be able to reproduce our results.
+3. Replace your `~/catkin_ws/src/drona/drona_description` folder with one in this repository. This will add RealSense D435 to quadcopter model and make other minor changes so you will be able to reproduce our results.
 4. Install all necessary Python packages
 
     ```bash
@@ -55,10 +55,10 @@ This guide is intended to be used on Ubuntu 20.04. Python version is 3.8.10, but
 
 ## Launch
 
-Launch the clover simulator and spawn some obstacles:
+Launch the drona simulator and spawn some obstacles:
 
 ```bash
-roslaunch clover_simulation simulator.launch
+roslaunch drona_simulation simulator.launch
 ```
 
 Open another terminal window, and launch the takeoff script. The drone will arm its motors and take off to the altitude specified in takeoff.py script:

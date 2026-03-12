@@ -1,10 +1,10 @@
 # Работа с камерой
 
-> **Note** Эта статья описывает работу с [образом версии **0.24**](https://github.com/CopterExpress/clover/releases/tag/v0.24), который пока находится в стадии тестирования. Для версии **0.23** доступна [более старая документация](https://github.com/CopterExpress/clover/blob/f78a03ec8943b596d5a99b893188a159d5319888/docs/ru/camera.md).
+> **Note** Эта статья описывает работу с [образом версии **0.24**](https://github.com/CopterExpress/drona/releases/tag/v0.24), который пока находится в стадии тестирования. Для версии **0.23** доступна [более старая документация](https://github.com/CopterExpress/drona/blob/f78a03ec8943b596d5a99b893188a159d5319888/docs/ru/camera.md).
 
 <!-- TODO: физическое подключение -->
 
-Для работы с основной камерой необходимо убедиться что она включена в файле `~/catkin_ws/src/clover/clover/launch/clover.launch`:
+Для работы с основной камерой необходимо убедиться что она включена в файле `~/catkin_ws/src/drona/drona/launch/drona.launch`:
 
 ```xml
 <arg name="main_camera" default="true"/>
@@ -12,10 +12,10 @@
 
 Также нужно убедиться, что камера [сфокусирована и для нее указано корректное расположение и ориентация](camera_setup.md).
 
-При изменении launch-файла необходимо перезапустить пакет `clover`:
+При изменении launch-файла необходимо перезапустить пакет `drona`:
 
 ```bash
-sudo systemctl restart clover
+sudo systemctl restart drona
 ```
 
 Для мониторинга изображения с камеры можно использовать [rqt](rviz.md) или [web_video_server](web_video_server.md).
@@ -27,7 +27,7 @@ sudo systemctl restart clover
 Остановите сервисы Клевера:
 
 ```bash
-sudo systemctl stop clover
+sudo systemctl stop drona
 ```
 
 Получите картинку с камеры утилитой `raspistill`:
@@ -63,7 +63,7 @@ import rospy
 import cv2
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
-from clover import long_callback
+from drona import long_callback
 
 rospy.init_node('cv')
 bridge = CvBridge()
@@ -78,7 +78,7 @@ image_sub = rospy.Subscriber('main_camera/image_raw', Image, image_callback)
 rospy.spin()
 ```
 
-> **Note** Обработка изображения может занимать значительное время. Это может вызвать [проблему](https://github.com/ros/ros_comm/issues/1901) в библиотеке rospy, которая приведет к обработке устаревших кадров с камеры. Для решения этой проблемы необходимо использовать декоратор `long_callback` из библиотеки `clover`, как в примере выше.
+> **Note** Обработка изображения может занимать значительное время. Это может вызвать [проблему](https://github.com/ros/ros_comm/issues/1901) в библиотеке rospy, которая приведет к обработке устаревших кадров с камеры. Для решения этой проблемы необходимо использовать декоратор `long_callback` из библиотеки `drona`, как в примере выше.
 
 #### Ограничение использования CPU
 
@@ -138,7 +138,7 @@ from pyzbar import pyzbar
 import cv2
 from cv_bridge import CvBridge
 from sensor_msgs.msg import Image
-from clover import long_callback
+from drona import long_callback
 
 rospy.init_node('cv')
 bridge = CvBridge()

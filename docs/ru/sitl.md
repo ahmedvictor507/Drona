@@ -173,12 +173,12 @@ cd ~/catkin_ws
 catkin_make
 ```
 
-Подтяните зависимости, прописанные в файле `setup` и склонируйте образ `Clover` в директорию `src`:
+Подтяните зависимости, прописанные в файле `setup` и склонируйте образ `Drona` в директорию `src`:
 
 ```bash
 ./devel/setup.bash
 cd src
-git clone https://github.com/copterexpress/clover
+git clone https://github.com/copterexpress/drona
 ```
 
 Перейдите в корневую папку и обновите зависимости ROS:
@@ -188,17 +188,17 @@ cd ..
 rosdep install -y --from-paths src --ignore-src -r
 ```
 
-Повторите сборку среды, но теперь с добавленным пакетом `Clover`:
+Повторите сборку среды, но теперь с добавленным пакетом `Drona`:
 
 ```bash
 catkin_make
 ```
 
-Если сборка прошла успешно то вы можете запустить ноду Клевера и пользоваться пакетом `clover` точно так же, как и на реальном коптере:
+Если сборка прошла успешно то вы можете запустить ноду Клевера и пользоваться пакетом `drona` точно так же, как и на реальном коптере:
 
 ```bash
 . devel/setup.bash
-roslaunch clover_simulation simulator.launch type:=none
+roslaunch drona_simulation simulator.launch type:=none
 ```
 
 Для того, чтобы воспользоваться функциями предоставляемыми нашим пакетом, в новом окне терминала подтяните зависимости из файла `setup`:
@@ -207,4 +207,4 @@ roslaunch clover_simulation simulator.launch type:=none
 source ~/catkin_ws/devel/setup.bash
 ```
 
-Теперь вы можете воспользоваться всеми возможностями пакета `clover` в вашем симуляторе.
+Теперь вы можете воспользоваться всеми возможностями пакета `drona` в вашем симуляторе.

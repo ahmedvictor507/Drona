@@ -10,23 +10,23 @@ For a better recognition of the markers, you need to set the camera vertically s
 
 ### Camera mount, 3D printing
 
-Print the [camera mount](models.md#clover-3).
+Print the [camera mount](models.md#drona-3).
 
 Install the mount in a convenient location, so that the camera has a minimum number of unnecessary objects (protection, legs, propellers, beams) — all of it will negatively affect the recognition of the markers.
 
 ## Setting the camera transform
 
-To set the camera position at the desired angle, open the file `main_camera.launch`, located in `~/catkin_ws/src/clover/clover/launch/`.
+To set the camera position at the desired angle, open the file `main_camera.launch`, located in `~/catkin_ws/src/drona/drona/launch/`.
 
 ```bash
-nano ~/catkin_ws/src/clover/clover/launch/main_camera.launch
+nano ~/catkin_ws/src/drona/drona/launch/main_camera.launch
 ```
 
 In the parameters `direction_x`, `direction_y`, set empty values manually or enter the following lines:
 
 ```bash
-sed -i "/direction_z/s/default=\".*\"/default=\"\"/" /home/pi/catkin_ws/src/clover/clover/launch/main_camera.launch
-sed -i "/direction_y/s/default=\".*\"/default=\"\"/" /home/pi/catkin_ws/src/clover/clover/launch/main_camera.launch
+sed -i "/direction_z/s/default=\".*\"/default=\"\"/" /home/pi/catkin_ws/src/drona/drona/launch/main_camera.launch
+sed -i "/direction_y/s/default=\".*\"/default=\"\"/" /home/pi/catkin_ws/src/drona/drona/launch/main_camera.launch
 ```
 
 Edit one of the configuration lines or add the line shown bellow:
@@ -47,7 +47,7 @@ If you are using the marker map, where the markers have equal distances along th
 153 0.40    -0.56   1.36    0
 ```
 
-After you fill out the map, you need to apply it. To do it, edit the file `aruco.launch`, located in `~/catkin_ws/src/clover/clover/launch/`. Change the line `<param name="map" value="$(find aruco_pose)/map/map_name.txt"/>`, where `map_name.txt` is the name of your map file.
+After you fill out the map, you need to apply it. To do it, edit the file `aruco.launch`, located in `~/catkin_ws/src/drona/drona/launch/`. Change the line `<param name="map" value="$(find aruco_pose)/map/map_name.txt"/>`, where `map_name.txt` is the name of your map file.
 
 If you are using markers that are not linked to horizontal surfaces (floor, ceiling), you must blank the `placement` argument in the same file:
 
@@ -55,4 +55,4 @@ If you are using markers that are not linked to horizontal surfaces (floor, ceil
 <arg name="placement" default=""/>
 ```
 
-After all the settings, call `sudo systemctl restart clover` to restart the `clover` service.
+After all the settings, call `sudo systemctl restart drona` to restart the `drona` service.

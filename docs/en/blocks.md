@@ -1,4 +1,4 @@
-# Blocks programming for Clover
+# Blocks programming for Drona
 
 <img src="../assets/blocks/blockly.svg" width=200 align="right">
 
@@ -6,7 +6,7 @@ Visual blocks programming feature has been added to the [RPi image](image.md), s
 
 ## Configuration
 
-For correct work of the blocks programming, `blocks` argument in the Clover launch-file (`~/catkin_ws/src/clover/clover/launch/clover.launch`) [should be equal to](cli.md#editing) `true`:
+For correct work of the blocks programming, `blocks` argument in the Drona launch-file (`~/catkin_ws/src/drona/drona/launch/drona.launch`) [should be equal to](cli.md#editing) `true`:
 
 ```xml
 <arg name="blocks" default="true"/>
@@ -14,7 +14,7 @@ For correct work of the blocks programming, `blocks` argument in the Clover laun
 
 ## Running
 
-To run Clover's blocks programming interface, [connect to Clover's Wi-Fi](wifi.md) and go to web-page http://192.168.11.1/clover_blocks/ or click the link *Blocks programming* at the [main page](wifi.md#web-interface).
+To run Drona's blocks programming interface, [connect to Drona's Wi-Fi](wifi.md) and go to web-page http://192.168.11.1/drona_blocks/ or click the link *Blocks programming* at the [main page](wifi.md#web-interface).
 
 The page looks as follows:
 
@@ -30,15 +30,15 @@ The *Stop* button stops the program. Clicking *Land* button also stops the progr
 
 To store the program, open the menu at the top right, select *Save* item and input your program's name. The name should contain only Latin characters, hyphen, underline and dot characters. All your stored programs are available at the same menu.
 
-Your programs are stored as XML-files in the `/catkin_ws/src/clover/clover_blocks/programs/` directory of the SD-card.
+Your programs are stored as XML-files in the `/catkin_ws/src/drona/drona_blocks/programs/` directory of the SD-card.
 
 > **Note** Note also example programs, available at the same menu.
 
 ## Blocks
 
-The set of blocks is somewhat similar to the set of ROS-services of [Clover's autonomous flights API](simple_offboard.md). This section contains descriptions of some of them.
+The set of blocks is somewhat similar to the set of ROS-services of [Drona's autonomous flights API](simple_offboard.md). This section contains descriptions of some of them.
 
-Clover's blocks are separated into 4 categories:
+Drona's blocks are separated into 4 categories:
 
 * <span style="padding:2px;color:white;background:#9d5ca6">Flight</span> – autonomous flight related commands.
 * <span style="padding:2px;color:white;background:#ff9b00">State</span> – blocks for obtaining the drone state parameters.

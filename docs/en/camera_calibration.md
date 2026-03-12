@@ -22,7 +22,7 @@ In order to calibrate the camera with the `camera_calibration` ROS-package you n
 
 2. Download the chessboard – [chessboard.pdf](../assets/chessboard.pdf). Print the chessboard on paper or open it on the computer screen.
 
-3. Connect to the [Clover Wi-Fi network](wifi.md).
+3. Connect to the [Drona Wi-Fi network](wifi.md).
 
 4. Run camera calibration (on your computer):
 
@@ -42,4 +42,4 @@ In order to calibrate the camera with the `camera_calibration` ROS-package you n
 
    When the calculation is done, you'll see calculated parameters in the terminal. The corrected camera image view will be displayed as well. If calibration was successful all straight lines will remain straight on the image displayed.
 
-7. Click the *COMMIT* button to store calculated calibration parameters. The result will be stored in the main Clover camera calibration file: `/home/pi/catkin_ws/src/clover/clover/camera_info/fisheye_cam_320.yaml`.
+7. Click the *COMMIT* button to store calculated calibration parameters. The result will be stored in the main Drona camera calibration file: `/home/pi/catkin_ws/src/drona/drona/camera_info/fisheye_cam_320.yaml`.

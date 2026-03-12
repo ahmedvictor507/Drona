@@ -20,7 +20,7 @@ Wi-Fi адаптер на Raspberry Pi имеет два основных реж
     ```txt
     network={
         ssid="my-super-ssid"
-        psk="cloverwifi123"
+        psk="dronawifi123"
         mode=2
         proto=RSN
         key_mgmt=WPA-PSK
@@ -90,8 +90,8 @@ Wi-Fi адаптер на Raspberry Pi имеет два основных реж
     country=GB
 
     network={
-        ssid="clover-1234"
-        psk="cloverwifi"
+        ssid="drona-1234"
+        psk="dronawifi"
         mode=2
         proto=RSN
         key_mgmt=WPA-PSK
@@ -101,7 +101,7 @@ Wi-Fi адаптер на Raspberry Pi имеет два основных реж
     }
     ```
 
-    где `clover-1234` – название сети, а `cloverwifi` – пароль.
+    где `drona-1234` – название сети, а `dronawifi` – пароль.
 
 3. Включите службу `dnsmasq`.
 
@@ -155,8 +155,8 @@ update_config=1
 country=GB
 
 network={
-        ssid=\"my-clover\"
-        psk=\"cloverwifi\"
+        ssid=\"my-drona\"
+        psk=\"dronawifi\"
         mode=2
         proto=RSN
         key_mgmt=WPA-PSK
@@ -212,7 +212,7 @@ sudo apt install dnsmasq-base
 
 ```bash
 # Вызов dnsmasq-base
-sudo dnsmasq --interface=wlan0 --address=/clover/coex/192.168.11.1 --no-daemon --dhcp-range=192.168.11.100,192.168.11.200,12h --no-hosts --filterwin2k --bogus-priv --domain-needed --quiet-dhcp6 --log-queries
+sudo dnsmasq --interface=wlan0 --address=/drona/coex/192.168.11.1 --no-daemon --dhcp-range=192.168.11.100,192.168.11.200,12h --no-hosts --filterwin2k --bogus-priv --domain-needed --quiet-dhcp6 --log-queries
 
 # Подробнее о dnsmasq-base
 dnsmasq --help
@@ -230,7 +230,7 @@ sudo apt install dnsmasq
 ```bash
 cat << EOF | sudo tee -a /etc/dnsmasq.conf
 interface=wlan0
-address=/clover/coex/192.168.11.1
+address=/drona/coex/192.168.11.1
 dhcp-range=192.168.11.100,192.168.11.200,12h
 no-hosts
 filterwin2k

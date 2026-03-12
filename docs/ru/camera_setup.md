@@ -1,6 +1,6 @@
 # Настройка камеры
 
-> **Note** Документация для версий [образа](image.md), начиная с **0.20**. Для более ранних версий см. [документацию для версии **0.19**](https://github.com/CopterExpress/clover/blob/v0.19/docs/ru/camera_frame.md).
+> **Note** Документация для версий [образа](image.md), начиная с **0.20**. Для более ранних версий см. [документацию для версии **0.19**](https://github.com/CopterExpress/drona/blob/v0.19/docs/ru/camera_frame.md).
 
 Для корректной работы всех функций, связанных с компьютерным зрением (в том числе [полета по ArUco-маркерам](aruco.md) и [Optical Flow](optical_flow.md)) необходимо сфокусировать основную камеру, а также выставить ее расположение и ориентацию. Улучшить качество работы также может опциональная калибровка камеры.
 
@@ -19,7 +19,7 @@
 
 ## Настройка расположения камеры {#frame}
 
-Расположение и ориентация камеры [задается в файле](cli.md#editing) `~/catkin_ws/src/clover/clover/launch/main_camera.launch`:
+Расположение и ориентация камеры [задается в файле](cli.md#editing) `~/catkin_ws/src/drona/drona/launch/main_camera.launch`:
 
 ```xml
 <arg name="direction_z" default="down"/> <!-- direction the camera points: down, up -->

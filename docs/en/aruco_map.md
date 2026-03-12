@@ -1,6 +1,6 @@
 # Map-based navigation with ArUco markers
 
-> **Note** The following applies to [image versions](image.md) **0.22** and up. Older documentation is still available for [for version **0.20**](https://github.com/CopterExpress/clover/blob/v0.20/docs/en/aruco_map.md).
+> **Note** The following applies to [image versions](image.md) **0.22** and up. Older documentation is still available for [for version **0.20**](https://github.com/CopterExpress/drona/blob/v0.20/docs/en/aruco_map.md).
 
 <!-- -->
 
@@ -14,13 +14,13 @@
 
 ## Configuration
 
-Set the `aruco` argument in `~/catkin_ws/src/clover/clover/launch/clover.launch` to `true`:
+Set the `aruco` argument in `~/catkin_ws/src/drona/drona/launch/drona.launch` to `true`:
 
 ```xml
 <arg name="aruco" default="true"/>
 ```
 
-In order to enable map detection set `aruco_map` and `aruco_detect` arguments to `true` in `~/catkin_ws/src/clover/clover/launch/aruco.launch`:
+In order to enable map detection set `aruco_map` and `aruco_detect` arguments to `true` in `~/catkin_ws/src/drona/drona/launch/aruco.launch`:
 
 ```xml
 <arg name="aruco_detect" default="true"/>
@@ -43,13 +43,13 @@ marker_id marker_size x y z z_angle y_angle x_angle
 
 `N_angle` is the angle of rotation along the `N` axis in radians.
 
-Map files are located at the `~/catkin_ws/src/clover/aruco_pose/map` directory. Map file name is defined in the `map` argument:
+Map files are located at the `~/catkin_ws/src/drona/aruco_pose/map` directory. Map file name is defined in the `map` argument:
 
 ```xml
 <arg name="map" default="map.txt"/>
 ```
 
-Some map examples are provided in [the directory](https://github.com/CopterExpress/clover/tree/master/aruco_pose/map).
+Some map examples are provided in [the directory](https://github.com/CopterExpress/drona/tree/master/aruco_pose/map).
 
 Grid maps may be generated using the `genmap.py` script:
 
@@ -156,13 +156,13 @@ If the drone's altitude is not stable, try increasing the `MPC_Z_VEL_P` paramete
 
 In order to navigate using markers on the ceiling, mount the onboard camera so that it points up and [adjust the camera frame accordingly](camera_setup.md).
 
-You should also set the `placement` parameter to `ceiling` in `~/catkin_ws/src/clover/clover/launch/aruco.launch`:
+You should also set the `placement` parameter to `ceiling` in `~/catkin_ws/src/drona/drona/launch/aruco.launch`:
 
 ```xml
 <arg name="placement" default="ceiling"/>
 ```
 
-With such a camera orientation the [Optical Flow](optical_flow.md) technology cannot work, so it should be disabled in the `~/catkin_ws/src/clover/clover/launch/clover.launch` file:
+With such a camera orientation the [Optical Flow](optical_flow.md) technology cannot work, so it should be disabled in the `~/catkin_ws/src/drona/drona/launch/drona.launch` file:
 
 ```xml
 <arg name="optical_flow" default="false"/>

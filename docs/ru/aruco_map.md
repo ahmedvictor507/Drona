@@ -1,6 +1,6 @@
 # Навигация по картам ArUco-маркеров
 
-> **Note** Документация для версий [образа](image.md), начиная с версии **0.22**. Для более ранних версий см. [документацию для версии **0.20**](https://github.com/CopterExpress/clover/blob/v0.20/docs/ru/aruco_map.md).
+> **Note** Документация для версий [образа](image.md), начиная с версии **0.22**. Для более ранних версий см. [документацию для версии **0.20**](https://github.com/CopterExpress/drona/blob/v0.20/docs/ru/aruco_map.md).
 
 <!-- -->
 
@@ -14,13 +14,13 @@
 
 ## Конфигурирование
 
-Аргумент `aruco` в файле `~/catkin_ws/src/clover/clover/launch/clover.launch` должен быть в значении `true`:
+Аргумент `aruco` в файле `~/catkin_ws/src/drona/drona/launch/drona.launch` должен быть в значении `true`:
 
 ```xml
 <arg name="aruco" default="true"/>
 ```
 
-Для включения распознавания карт маркеров аргументы `aruco_map` и `aruco_detect` в файле `~/catkin_ws/src/clover/clover/launch/aruco.launch` должны быть в значении `true`:
+Для включения распознавания карт маркеров аргументы `aruco_map` и `aruco_detect` в файле `~/catkin_ws/src/drona/drona/launch/aruco.launch` должны быть в значении `true`:
 
 ```xml
 <arg name="aruco_detect" default="true"/>
@@ -43,13 +43,13 @@ id_маркера размер_маркера x y z угол_z угол_y уго
 
 Где `угол_N` – это угол поворота маркера вокруг оси N в радианах.
 
-Файлы карт располагаются в каталоге `~/catkin_ws/src/clover/aruco_pose/map`. Название файла с картой задается в аргументе `map`:
+Файлы карт располагаются в каталоге `~/catkin_ws/src/drona/aruco_pose/map`. Название файла с картой задается в аргументе `map`:
 
 ```xml
 <arg name="map" default="map.txt"/>
 ```
 
-Смотрите примеры карт маркеров в [`вышеуказанном каталоге`](https://github.com/CopterExpress/clover/tree/master/aruco_pose/map).
+Смотрите примеры карт маркеров в [`вышеуказанном каталоге`](https://github.com/CopterExpress/drona/tree/master/aruco_pose/map).
 
 Файл карты может быть сгенерирован с помощью инструмента `genmap.py`:
 
@@ -158,13 +158,13 @@ navigate(frame_id='aruco_5', x=0, y=0, z=1)
 
 Для навигации по маркерам, расположенным на потолке, необходимо поставить основную камеру так, чтобы она смотрела вверх и [установить соответствующий фрейм камеры](camera_setup.md#frame).
 
-Также в файле `~/catkin_ws/src/clover/clover/launch/aruco.launch` необходимо выставить аргумент `placement` в значение `ceiling`:
+Также в файле `~/catkin_ws/src/drona/drona/launch/aruco.launch` необходимо выставить аргумент `placement` в значение `ceiling`:
 
 ```xml
 <arg name="placement" default="ceiling"/>
 ```
 
-Технология [Optical Flow](optical_flow.md) не может нормально работать при таком расположении камеры, поэтому в файле `~/catkin_ws/src/clover/clover/launch/clover.launch` ее следует отключить:
+Технология [Optical Flow](optical_flow.md) не может нормально работать при таком расположении камеры, поэтому в файле `~/catkin_ws/src/drona/drona/launch/drona.launch` ее следует отключить:
 
 ```xml
 <arg name="optical_flow" default="false"/>

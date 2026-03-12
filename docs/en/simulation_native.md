@@ -2,7 +2,7 @@
 
 Setting up the simulation environment from scratch requires some effort, but results in the most performant setup, with less chance of driver issues.
 
-<!-- > **Hint** See up-to-date commands set for installation Clover simulation software in the script, that builds the virtual machine image with the simulator: [`install_software.sh`](https://github.com/CopterExpress/clover_vm/blob/master/scripts/install_software.sh). -->
+<!-- > **Hint** See up-to-date commands set for installation Drona simulation software in the script, that builds the virtual machine image with the simulator: [`install_software.sh`](https://github.com/CopterExpress/drona_vm/blob/master/scripts/install_software.sh). -->
 
 Prerequisites: **Ubuntu 20.04**.
 
@@ -35,11 +35,11 @@ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Clone Clover sources:
+Clone Drona sources:
 
 ```bash
 cd ~/catkin_ws/src
-git clone --depth 1 https://github.com/CopterExpress/clover
+git clone --depth 1 https://github.com/CopterExpress/drona
 git clone --depth 1 https://github.com/CopterExpress/ros_led
 git clone --depth 1 https://github.com/ethz-asl/mav_comm
 ```
@@ -56,7 +56,7 @@ rosdep install --from-paths src --ignore-src -y
 Install Python dependencies:
 
 ```bash
-sudo /usr/bin/python3 -m pip install -r ~/catkin_ws/src/clover/clover/requirements.txt
+sudo /usr/bin/python3 -m pip install -r ~/catkin_ws/src/drona/drona/requirements.txt
 ```
 
 ## Get PX4 sources
@@ -97,12 +97,12 @@ Install more required Python packages:
 pip3 install --user toml
 ```
 
-## Add the Clover airframe
+## Add the Drona airframe
 
-Add the Clover airframe to PX4 using the command:
+Add the Drona airframe to PX4 using the command:
 
 ```bash
-ln -s ~/catkin_ws/src/clover/clover_simulation/airframes/* ~/PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes/
+ln -s ~/catkin_ws/src/drona/drona_simulation/airframes/* ~/PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes/
 ```
 
 ## Install geographiclib datasets
@@ -129,14 +129,14 @@ catkin_make -j1
 In order to be sure that everything was built correctly, try running the simulator for the first time:
 
 ```bash
-roslaunch clover_simulation simulator.launch
+roslaunch drona_simulation simulator.launch
 ```
 
-You can test autonomous flight using example scripts in `~/catkin_ws/src/clover/clover/examples` directory.
+You can test autonomous flight using example scripts in `~/catkin_ws/src/drona/drona/examples` directory.
 
 ## Additional steps
 
-To make it possible to run Gazebo simulation environment without Clover (`gazebo` command), add into your `.bashrc` sourcing Gazebo's initialization script:
+To make it possible to run Gazebo simulation environment without Drona (`gazebo` command), add into your `.bashrc` sourcing Gazebo's initialization script:
 
 ```bash
 echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
@@ -145,22 +145,22 @@ echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
 Optionally, install roscore systemd service to have roscore running in background:
 
 ```bash
-sed -i "s/pi/$USER/g" ~/catkin_ws/src/clover/builder/assets/roscore.service
-sudo cp ~/catkin_ws/src/clover/builder/assets/roscore.service /etc/systemd/system
+sed -i "s/pi/$USER/g" ~/catkin_ws/src/drona/builder/assets/roscore.service
+sudo cp ~/catkin_ws/src/drona/builder/assets/roscore.service /etc/systemd/system
 sudo systemctl enable roscore
 sudo systemctl start roscore
 ```
 
 ### Web tools setup
 
-Install any web server to serve Clover's web tools (`~/.ros/www` directory), e. g. Monkey:
+Install any web server to serve Drona's web tools (`~/.ros/www` directory), e. g. Monkey:
 
 ```bash
-wget https://github.com/CopterExpress/clover_vm/raw/master/assets/packages/monkey_1.6.9-1_$(dpkg --print-architecture).deb -P /tmp
+wget https://github.com/CopterExpress/drona_vm/raw/master/assets/packages/monkey_1.6.9-1_$(dpkg --print-architecture).deb -P /tmp
 sudo dpkg -i /tmp/monkey_*.deb
-sed "s/pi/$USER/g" ~/catkin_ws/src/clover/builder/assets/monkey | sudo tee /etc/monkey/sites/default
+sed "s/pi/$USER/g" ~/catkin_ws/src/drona/builder/assets/monkey | sudo tee /etc/monkey/sites/default
 sudo sed -i 's/SymLink Off/SymLink On/' /etc/monkey/monkey.conf
-sudo cp ~/catkin_ws/src/clover/builder/assets/monkey.service /etc/systemd/system/monkey.service
+sudo cp ~/catkin_ws/src/drona/builder/assets/monkey.service /etc/systemd/system/monkey.service
 sudo systemctl enable monkey
 sudo systemctl start monkey
 ```
@@ -168,7 +168,7 @@ sudo systemctl start monkey
 Create `~/.ros/www` using the following command:
 
 ```bash
-rosrun clover www
+rosrun drona www
 ```
 
 If the set of packages containing a web part (through `www` directory) is changed, the above command also must be run.

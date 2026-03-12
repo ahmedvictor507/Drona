@@ -54,9 +54,9 @@ Such a system is really helpful in parking lots as it avoids hassles and commoti
 
 By the end of the project, we expect a DIY drone that has autonomous functionality and it is eligible to perform the given task efficiently.
 
-### Using Clover platform
+### Using Drona platform
 
-The COEX Clover platform is used for simulating and implementing OpenCV, ROS for the drone. It helps us integrate ROS with our Raspberry Pi.
+The COEX Drona platform is used for simulating and implementing OpenCV, ROS for the drone. It helps us integrate ROS with our Raspberry Pi.
 
 ### Additional information at the request of participants
 

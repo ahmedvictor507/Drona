@@ -1,6 +1,6 @@
 # Распознавание ArUco-маркеров
 
-> **Note** Документация для версий [образа](image.md), начиная с версии **0.22**. Для более ранних версий см. [документацию для версии **0.20**](https://github.com/CopterExpress/clover/blob/v0.20/docs/ru/aruco_marker.md).
+> **Note** Документация для версий [образа](image.md), начиная с версии **0.22**. Для более ранних версий см. [документацию для версии **0.20**](https://github.com/CopterExpress/drona/blob/v0.20/docs/ru/aruco_marker.md).
 
 <!-- -->
 
@@ -14,13 +14,13 @@
 
 ## Настройка
 
-Аргумент `aruco` в файле `~/catkin_ws/src/clover/clover/launch/clover.launch` должен быть в значении `true`:
+Аргумент `aruco` в файле `~/catkin_ws/src/drona/drona/launch/drona.launch` должен быть в значении `true`:
 
 ```xml
 <arg name="aruco" default="true"/>
 ```
 
-Для включения распознавания маркеров аргумент `aruco_detect` в файле `~/catkin_ws/src/clover/clover/launch/aruco.launch` должен быть в значении `true`:
+Для включения распознавания маркеров аргумент `aruco_detect` в файле `~/catkin_ws/src/drona/drona/launch/aruco.launch` должен быть в значении `true`:
 
 ```xml
 <arg name="aruco_detect" default="true"/>

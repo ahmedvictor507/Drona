@@ -1,6 +1,6 @@
 # ArUco marker detection
 
-> **Note** The following applies to [image versions](image.md) **0.22** and up. Older documentation is still available for [for version **0.20**](https://github.com/CopterExpress/clover/blob/v0.20/docs/en/aruco_marker.md).
+> **Note** The following applies to [image versions](image.md) **0.22** and up. Older documentation is still available for [for version **0.20**](https://github.com/CopterExpress/drona/blob/v0.20/docs/en/aruco_marker.md).
 
 <!-- -->
 
@@ -14,13 +14,13 @@ Using this module along with [map-based navigation](aruco_map.md) is also possib
 
 ## Setup
 
-Set the `aruco` argument in `~/catkin_ws/src/clover/clover/launch/clover.launch` to `true`:
+Set the `aruco` argument in `~/catkin_ws/src/drona/drona/launch/drona.launch` to `true`:
 
 ```xml
 <arg name="aruco" default="true"/>
 ```
 
-For enabling detection set the `aruco_detect` argument in `~/catkin_ws/src/clover/clover/launch/aruco.launch` to `true`:
+For enabling detection set the `aruco_detect` argument in `~/catkin_ws/src/drona/drona/launch/aruco.launch` to `true`:
 
 ```xml
 <arg name="aruco_detect" default="true"/>

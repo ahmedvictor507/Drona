@@ -1,6 +1,6 @@
 # Работа с лазерным дальномером
 
-> **Note** Документация для версий [образа](image.md), начиная с **0.18**. Для более ранних версий см. [документацию для версии **0.17**](https://github.com/CopterExpress/clover/blob/v0.17/docs/ru/laser.md).
+> **Note** Документация для версий [образа](image.md), начиная с **0.18**. Для более ранних версий см. [документацию для версии **0.17**](https://github.com/CopterExpress/drona/blob/v0.17/docs/ru/laser.md).
 
 ## Дальномер VL53L1X
 
@@ -22,7 +22,7 @@
 
 ### Включение
 
-[Подключитесь по SSH](ssh.md) и отредактируйте файл `~/catkin_ws/src/clover/clover/launch/clover.launch` так, чтобы драйвер VL53L1X был включен:
+[Подключитесь по SSH](ssh.md) и отредактируйте файл `~/catkin_ws/src/drona/drona/launch/drona.launch` так, чтобы драйвер VL53L1X был включен:
 
 ```xml
 <arg name="rangefinder_vl53l1x" default="true"/>

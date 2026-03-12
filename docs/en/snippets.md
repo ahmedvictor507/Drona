@@ -338,7 +338,7 @@ rospy.loginfo('flip')
 flip()
 ```
 
-Requires the [special PX4 firmware for Clover](firmware.md#modified-firmware-for-clover). Before running a flip, take all necessary safety precautions.
+Requires the [special PX4 firmware for Drona](firmware.md#modified-firmware-for-drona). Before running a flip, take all necessary safety precautions.
 
 ### # {#calibrate-gyro}
 
@@ -431,7 +431,7 @@ import dynamic_reconfigure.client
 rospy.init_node('flight')
 map_client = dynamic_reconfigure.client.Client('aruco_map')
 
-map_client.update_configuration({'map': '/home/pi/catkin_ws/src/clover/aruco_pose/map/office.txt'})
+map_client.update_configuration({'map': '/home/pi/catkin_ws/src/drona/aruco_pose/map/office.txt'})
 ```
 
 ### # {#wait-global-position}

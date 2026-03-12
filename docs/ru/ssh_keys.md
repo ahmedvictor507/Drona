@@ -28,7 +28,7 @@ ssh pi@192.168.11.1
 # Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 # Warning: Permanently added '192.168.11.1' (ED25519) to the list of known hosts.
 # pi@192.168.11.1's password: *********
-# Linux clover-3270 5.10.17-v7l+ #1414 SMP Fri Apr 30 13:20:47 BST 2021 armv7l
+# Linux drona-3270 5.10.17-v7l+ #1414 SMP Fri Apr 30 13:20:47 BST 2021 armv7l
 
 whoami
 # pi
@@ -74,11 +74,11 @@ chmod 600 ~/.ssh/config ~/.ssh/known_hosts
 <!-- TODO: в Windows начиная с версии 10 все команды перечисленные статье должны работать, - Проверить! -->
 
 ```bash
-ssh-keygen -f ~/.ssh/id_clover -C "SSH key for Clover" -N ""
-# Your identification has been saved in /home/galina/.ssh/id_clover
-# Your public key has been saved in /home/galina/.ssh/id_clover.pub
+ssh-keygen -f ~/.ssh/id_drona -C "SSH key for Drona" -N ""
+# Your identification has been saved in /home/galina/.ssh/id_drona
+# Your public key has been saved in /home/galina/.ssh/id_drona.pub
 
-chmod 400 ~/.ssh/id_clover*
+chmod 400 ~/.ssh/id_drona*
 ```
 
 ### Копирование SSH-ключа на Raspberry Pi
@@ -86,20 +86,20 @@ chmod 400 ~/.ssh/id_clover*
 После чего [подключаемся к Raspberry Pi по Wi-Fi](wifi.md) и продолжаем вводить команды *на ноутбуке* для копирования ключа на мини-компьютер:
 
 ```bash
-ssh-copy-id -i ~/.ssh/id_clover.pub pi@192.168.11.1
+ssh-copy-id -i ~/.ssh/id_drona.pub pi@192.168.11.1
 # pi@192.168.11.1's password: *********
 ```
 
 В результате с ноутбука на микрокомпьютер RPi будет скопирована т.н. *открытая* часть ключа, а *закрытая* останется на ноутбуке. Для проверки подключения без ввода пароля используем команду с указанием пути где находится SSH-ключ:
 
 ```bash
-ssh -i ~/.ssh/id_clover pi@192.168.11.1
+ssh -i ~/.ssh/id_drona pi@192.168.11.1
 ```
 
 Если терминал не потребует ввода пароля для подключения к RPi, то вы всё сделали правильно и пара SSH-ключей работает. Теперь можно набрать команду выхода из SSH-терминала, чтобы продолжить настройку ноутбука:
 
 ```bash
-pi@clover-3270:~ $ exit
+pi@drona-3270:~ $ exit
 # logout
 # Connection to 192.168.11.1 closed.
 
@@ -113,7 +113,7 @@ galina@Thinkpad-X1:~/.ssh$
 ```txt
 Host 192.168.11.1
     User pi
-    IdentityFile ~/.ssh/id_clover
+    IdentityFile ~/.ssh/id_drona
     PreferredAuthentications publickey,password
     PubkeyAuthentication yes
     PasswordAuthentication yes
@@ -128,7 +128,7 @@ Host 192.168.11.1
 
 * влияет на работу SSH-терминала при подключении к компьютеру с ip-адресом `192.168.11.1`;
 * если имя пользователя не указано, то автоматически будет использоваться имя `pi`;
-* будет автоматически использоваться приватный ключ `~/.ssh/id_clover`;
+* будет автоматически использоваться приватный ключ `~/.ssh/id_drona`;
 * если ключ по каким-то причинам не подойдёт (был заменён на одном ноутбуке, но забыт заменить на другом), то SSH-терминал перейдёт к аутентификации по паролю (настройки `PreferredAuthentications`, `PubkeyAuthentication`, `PasswordAuthentication`);
 * если связь с RPi не может установиться (WiFi ещё не включился), то SSH-подключение не зависнет, а быстро завершится (настройка `ConnectTimeout`);
 * если связь с RPi будет внезапно разорвана, то SSH-подключение не зависнет, а быстро завершится (настройки `TCPKeepAlive`, `ServerAliveInterval`, `ServerAliveCountMax`);

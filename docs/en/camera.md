@@ -1,8 +1,8 @@
 # Working with the camera
 
-> **Note** The following applies to the [image version **0.24**](https://github.com/CopterExpress/clover/releases/tag/v0.24), which is not yet released. Older documentation is still available for [for version **0.23**](https://github.com/CopterExpress/clover/blob/f78a03ec8943b596d5a99b893188a159d5319888/docs/en/camera.md).
+> **Note** The following applies to the [image version **0.24**](https://github.com/CopterExpress/drona/releases/tag/v0.24), which is not yet released. Older documentation is still available for [for version **0.23**](https://github.com/CopterExpress/drona/blob/f78a03ec8943b596d5a99b893188a159d5319888/docs/en/camera.md).
 
-Make sure the camera is enabled in the `~/catkin_ws/src/clover/clover/launch/clover.launch` file:
+Make sure the camera is enabled in the `~/catkin_ws/src/drona/drona/launch/drona.launch` file:
 
 ```xml
 <arg name="main_camera" default="true"/>
@@ -10,10 +10,10 @@ Make sure the camera is enabled in the `~/catkin_ws/src/clover/clover/launch/clo
 
 Also make sure that [position and orientation of the camera](camera_setup.md) is correct.
 
-The `clover` service must be restarted after the launch-file has been edited:
+The `drona` service must be restarted after the launch-file has been edited:
 
 ```(bash)
-sudo systemctl restart clover
+sudo systemctl restart drona
 ```
 
 You may use [rqt](rviz.md) or [web_video_server](web_video_server.md) to view the camera stream.
@@ -22,10 +22,10 @@ You may use [rqt](rviz.md) or [web_video_server](web_video_server.md) to view th
 
 If the camera stream is missing, try using the [`raspistill`](https://www.raspberrypi.org/documentation/usage/camera/raspicam/raspistill.md) utility to check whether the camera works.
 
-First, stop the `clover` service:
+First, stop the `drona` service:
 
 ```bash
-sudo systemctl stop clover
+sudo systemctl stop drona
 ```
 
 Then use `raspistill` to capture an image from the camera:
@@ -61,7 +61,7 @@ import rospy
 import cv2
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
-from clover import long_callback
+from drona import long_callback
 
 rospy.init_node('cv')
 bridge = CvBridge()
@@ -76,7 +76,7 @@ image_sub = rospy.Subscriber('main_camera/image_raw', Image, image_callback)
 rospy.spin()
 ```
 
-> **Note** Image processing may take significant time to finish. This can cause an [issue](https://github.com/ros/ros_comm/issues/1901) in rospy library, which would lead to processing stale camera frames. To solve this problem you need to use `long_callback` decorator from `clover` library, as in the example above.
+> **Note** Image processing may take significant time to finish. This can cause an [issue](https://github.com/ros/ros_comm/issues/1901) in rospy library, which would lead to processing stale camera frames. To solve this problem you need to use `long_callback` decorator from `drona` library, as in the example above.
 
 #### Limiting CPU usage
 
@@ -136,7 +136,7 @@ from pyzbar import pyzbar
 import cv2
 from cv_bridge import CvBridge
 from sensor_msgs.msg import Image
-from clover import long_callback
+from drona import long_callback
 
 rospy.init_node('cv')
 bridge = CvBridge()

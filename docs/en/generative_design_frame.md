@@ -12,7 +12,7 @@ Telegram: @danielhonies.
 
 ## Introduction
 
-At the Aachen Drone Development Initiative we aim to develop a new frame for the clover drone by implementing the latest state of the art CAD-Design techniques as well as advanced manufacturing methods.
+At the Aachen Drone Development Initiative we aim to develop a new frame for the drona drone by implementing the latest state of the art CAD-Design techniques as well as advanced manufacturing methods.
 
 Three main goals have to be taken into consideration when designing a new frame:
 
@@ -77,7 +77,7 @@ In this final prototype we have changed the preserved geometry on the bottom to 
 
 ### Benefits
 
-We see the following benefits with our design over the traditional clover frame design:
+We see the following benefits with our design over the traditional drona frame design:
 
 - Tools needed for production: only a 3D printer is needed compared to laser cutter, cnc and 3D printer
 - Single material reduces supply chain complexity and reduces cost. Filament is cheap and only around 400 grams are needed for the full frame and the prop guard. This should reduce the cost to under $5.
@@ -92,4 +92,4 @@ In our work for this years competition we presented a new way to design and manu
 ### CAD Files
 
 You are welcome to test out these frame yourself and you are free to modify them in any way, shape or form. We would appreciate feedback and encourage submitting your modifications in a pull request so other people can benefit from this open source development.
-The CAD Files can be found on our [GitHub Page](https://github.com/Aachen-Drone-Development-Initiative/generative-clover-frame).
+The CAD Files can be found on our [GitHub Page](https://github.com/Aachen-Drone-Development-Initiative/generative-drona-frame).

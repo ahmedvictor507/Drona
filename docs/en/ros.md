@@ -4,13 +4,13 @@
 
 Main documentation: https://wiki.ros.org.
 
-**ROS** is a widely used framework for developing complex and distributed robotic systems. The [Clover autonomous flights platform](programming.md) is based on ROS.
+**ROS** is a widely used framework for developing complex and distributed robotic systems. The [Drona autonomous flights platform](programming.md) is based on ROS.
 
 ## Installation
 
 ROS is already installed on [the RPi image](image.md).
 
-To install ROS on your PC you may address the [official installation documentation](https://wiki.ros.org/noetic/Installation/Ubuntu). For a quick start it's recommended to use [the virtual machine image with ROS and Clover simulator](simulation_vm.md).
+To install ROS on your PC you may address the [official installation documentation](https://wiki.ros.org/noetic/Installation/Ubuntu). For a quick start it's recommended to use [the virtual machine image with ROS and Drona simulator](simulation_vm.md).
 
 ## Concepts
 
@@ -34,7 +34,7 @@ rospy.init_node('my_ros_node')  # the name of the ROS node
 rospy.spin() # entering an infinite loop...
 ```
 
-> **Info** Any [autonomous flight script](programming.md) for Clover is a ROS node.
+> **Info** Any [autonomous flight script](programming.md) for Drona is a ROS node.
 
 ### Topics
 
@@ -112,11 +112,11 @@ Example of invoking a ROS service in Python:
 
 ```python
 import rospy
-from clover.srv import GetTelemetry
+from drona.srv import GetTelemetry
 
 rospy.init_node('my_ros_node')
 
-# Creating a wrapper for the get_telemetry service of the clover package with the GetTelemetry type:
+# Creating a wrapper for the get_telemetry service of the drona package with the GetTelemetry type:
 get_telemetry = rospy.ServiceProxy('get_telemetry', srv.GetTelemetry)
 
 # Invoking the service, and getting the quadcopter telemetry:
@@ -129,7 +129,7 @@ You can also work with the services using the `rosservice` utility. For instance
 rosservice call /get_telemetry "{frame_id: ''}"
 ```
 
-More examples of using the services for Clover quadcopter autonomous flights are available in the [documentation for node simple_offboard](simple_offboard.md).
+More examples of using the services for Drona quadcopter autonomous flights are available in the [documentation for node simple_offboard](simple_offboard.md).
 
 ### Names
 

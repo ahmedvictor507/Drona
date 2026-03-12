@@ -1,6 +1,6 @@
 # Сборка Клевера 4.2 WorldSkills
 
-Габаритный чертеж – [clover-4.2-ws.pdf](https://github.com/CopterExpress/clover/raw/master/docs/assets/dimensional-drawing/clover-4.2-ws.pdf).
+Габаритный чертеж – [drona-4.2-ws.pdf](https://github.com/CopterExpress/drona/raw/master/docs/assets/dimensional-drawing/drona-4.2-ws.pdf).
 
 ## Размер крепежа
 

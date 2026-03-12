@@ -186,9 +186,9 @@ gst-rtsp-launch "( v4l2src device=/dev/video0 ! video/x-raw,format=UYVY,width=19
 
 ## Создание ROS-топиков с изображениями с камер
 
-Чтобы доступ к изображению с камер был доступен через ROS-топики, нужно создать для обоих камер launch-файлы для запуска в пакете `clover`.
+Чтобы доступ к изображению с камер был доступен через ROS-топики, нужно создать для обоих камер launch-файлы для запуска в пакете `drona`.
 
-Для камеры VEYE-MIPI-327E создайте файл `~/catkin_ws/src/clover/clover/launch/front_camera.launch` и добавьте в него следующий текст:
+Для камеры VEYE-MIPI-327E создайте файл `~/catkin_ws/src/drona/drona/launch/front_camera.launch` и добавьте в него следующий текст:
 
 ```xml
 <launch>
@@ -212,7 +212,7 @@ gst-rtsp-launch "( v4l2src device=/dev/video0 ! video/x-raw,format=UYVY,width=19
 </launch>
 ```
 
-Для тепловизора создайте файл `~/catkin_ws/src/clover/clover/launch/thermal_camera.launch` и добавьте в него следующий текст:
+Для тепловизора создайте файл `~/catkin_ws/src/drona/drona/launch/thermal_camera.launch` и добавьте в него следующий текст:
 
 ```xml
 <launch>
@@ -225,7 +225,7 @@ gst-rtsp-launch "( v4l2src device=/dev/video0 ! video/x-raw,format=UYVY,width=19
     </node>
 
     <!-- camera node -->
-    <node pkg="nodelet" type="nodelet" name="thermal_camera" args="load cv_camera/CvCameraNodelet thermal_camera_nodelet_manager" launch-prefix="rosrun clover waitfile $(arg thermal_device)" clear_params="true" respawn="true">
+    <node pkg="nodelet" type="nodelet" name="thermal_camera" args="load cv_camera/CvCameraNodelet thermal_camera_nodelet_manager" launch-prefix="rosrun drona waitfile $(arg thermal_device)" clear_params="true" respawn="true">
         <param name="device_path" value="$(arg thermal_device)"/>
 
         <!-- camera FPS -->
@@ -238,7 +238,7 @@ gst-rtsp-launch "( v4l2src device=/dev/video0 ! video/x-raw,format=UYVY,width=19
 </launch>
 ```
 
-Далее отредактируйте файл `~/catkin_ws/src/clover/clover/launch/clover.launch`. Установите параметры `main_camera` и `optical_flow` в значение `false`:
+Далее отредактируйте файл `~/catkin_ws/src/drona/drona/launch/drona.launch`. Установите параметры `main_camera` и `optical_flow` в значение `false`:
 
 ```xml
     <arg name="main_camera" default="false"/>
@@ -256,16 +256,16 @@ gst-rtsp-launch "( v4l2src device=/dev/video0 ! video/x-raw,format=UYVY,width=19
 
 ```xml
     <!-- front camera -->
-    <include file="$(find clover)/launch/front_camera.launch" if="$(arg front_camera)"/>
+    <include file="$(find drona)/launch/front_camera.launch" if="$(arg front_camera)"/>
 
     <!-- thermal camera -->
-    <include file="$(find clover)/launch/thermal_camera.launch" if="$(arg thermal_camera)"/>
+    <include file="$(find drona)/launch/thermal_camera.launch" if="$(arg thermal_camera)"/>
 ```
 
-Теперь осталось только перезагрузить сервис `clover` командой:
+Теперь осталось только перезагрузить сервис `drona` командой:
 
 ```bash
-sudo systemctl restart clover
+sudo systemctl restart drona
 ```
 
 И новые топики с камерами появятся в списке:
@@ -294,7 +294,7 @@ gst-launch-1.0  v4l2src device=/dev/video5 ! video/x-raw,width=320,height=240 ! 
 gst-launch-1.0  v4l2src device=/dev/video0 ! video/x-raw,format=UYVY,width=1920,height=1080,framerate=30/1 ! videoscale ! video/x-raw, width=1280, height=720 ! tee ! v4l2sink device=/dev/video7
 ```
 
-В заключение измените содержимое файла `~/catkin_ws/src/clover/clover/launch/front_camera.launch` на следующий текст:
+В заключение измените содержимое файла `~/catkin_ws/src/drona/drona/launch/front_camera.launch` на следующий текст:
 
 ```xml
 <launch>
@@ -314,7 +314,7 @@ gst-launch-1.0  v4l2src device=/dev/video0 ! video/x-raw,format=UYVY,width=1920,
 </launch>
 ```
 
-А также измените содержимое файла `~/catkin_ws/src/clover/clover/launch/thermal_camera.launch` на следующий текст:
+А также измените содержимое файла `~/catkin_ws/src/drona/drona/launch/thermal_camera.launch` на следующий текст:
 
 ```xml
 <launch>
@@ -327,7 +327,7 @@ gst-launch-1.0  v4l2src device=/dev/video0 ! video/x-raw,format=UYVY,width=1920,
     </node>
 
     <!-- camera node -->
-    <node pkg="nodelet" type="nodelet" name="thermal_camera" args="load cv_camera/CvCameraNodelet thermal_camera_nodelet_manager" launch-prefix="rosrun clover waitfile $(arg thermal_device)" clear_params="true" respawn="true">
+    <node pkg="nodelet" type="nodelet" name="thermal_camera" args="load cv_camera/CvCameraNodelet thermal_camera_nodelet_manager" launch-prefix="rosrun drona waitfile $(arg thermal_device)" clear_params="true" respawn="true">
         <param name="device_path" value="$(arg thermal_device)"/>
     </node>
 </launch>

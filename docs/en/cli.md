@@ -15,7 +15,7 @@ ls
 Change current (working) directory:
 
 ```bash
-cd catkin_ws/src/clover/clover/launch
+cd catkin_ws/src/drona/drona/launch
 ```
 
 Go one directory level up:
@@ -75,26 +75,26 @@ You can use **nano** to edit files on the Raspberry Pi. It is one of the more us
    For example:
 
    ```bash
-   nano ~/catkin_ws/src/clover/clover/launch/clover.launch
+   nano ~/catkin_ws/src/drona/drona/launch/drona.launch
    ```
 
    <img src="../assets/nano.png" alt="Editing files in nano" data-action="zoom">
 2. Edit the file.
 3. Press `Ctrl`+`X`, `Y`, `Enter` to save your file and exit.
-4. Restart the `clover` service if you've changed .launch files:
+4. Restart the `drona` service if you've changed .launch files:
 
    ```bash
-   sudo systemctl restart clover
+   sudo systemctl restart drona
    ```
 
 You may also use other editors like **vim** if you prefer.
 
 ## Resetting changes
 
-For resetting all the changes in Clover package related files (`launch`-files), use git:
+For resetting all the changes in Drona package related files (`launch`-files), use git:
 
 ```bash
-cd ~/catkin_ws/src/clover
+cd ~/catkin_ws/src/drona
 git checkout .
-sudo systemctl restart clover
+sudo systemctl restart drona
 ```

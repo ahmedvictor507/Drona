@@ -14,7 +14,7 @@ jobs:
   #     - uses: actions/checkout@v4
   #     - name: Native Melodic build
   #       run: |
-  #         docker run --rm -v $(pwd):/root/catkin_ws/src/clover ros:melodic-ros-base /root/catkin_ws/src/clover/builder/standalone-install.sh
+  #         docker run --rm -v $(pwd):/root/catkin_ws/src/drona ros:melodic-ros-base /root/catkin_ws/src/drona/builder/standalone-install.sh
   noetic:
     runs-on: ubuntu-latest
     container: ros:noetic-ros-base
@@ -25,7 +25,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        path: catkin_ws/src/clover
+        path: catkin_ws/src/drona
     - name: Install requirements
       run: apt-get update && apt-get -y install python3-pip fakeroot python3-bloom debhelper dpkg-dev
     - name: Install dependencies
@@ -48,5 +48,5 @@ jobs:
     - uses: actions/upload-artifact@v4
       with:
         name: debian-packages
-        path: catkin_ws/src/clover/*.deb
+        path: catkin_ws/src/drona/*.deb
         retention-days: 1

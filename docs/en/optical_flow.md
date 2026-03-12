@@ -6,7 +6,7 @@ Running the "Optical Flow" function offers the possibility of POSCTL flight mode
 
 > **Hint** For Optical Flow to work it's required that the laser rangefinder is [connected and configured](laser.md).
 
-Enable Optical Flow in the file `~/catkin_ws/src/clover/clover/launch/clover.launch`:
+Enable Optical Flow in the file `~/catkin_ws/src/drona/drona/launch/drona.launch`:
 
 ```xml
 <arg name="optical_flow" default="true"/>
@@ -18,7 +18,7 @@ Optical Flow publishes data in `/mavros/px4flow/raw/send` topic. In the topic `/
 
 ## Setup of the flight controller
 
-> **Hint** Suggested parameters are applied automatically in [our custom PX4 firmware](firmware.md#modified-firmware-for-clover).
+> **Hint** Suggested parameters are applied automatically in [our custom PX4 firmware](firmware.md#modified-firmware-for-drona).
 
 When using **EKF2** (parameter `SYS_MC_EST_GROUP` = `ekf2`):
 

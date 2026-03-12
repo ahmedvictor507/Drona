@@ -9,14 +9,14 @@ The [rviz](http://wiki.ros.org/rviz) tool allows real-time visualization of all 
 
 To use rviz and rqt, a PC running Ubuntu Linux (or a virtual machine such as [Parallels Desktop Lite](https://itunes.apple.com/ru/app/parallels-desktop-lite/id1085114709?mt=12) or [VirtualBox](https://www.virtualbox.org)) is required.
 
-> **Hint** You can use the [preconfigured virtual machine image](simulation_vm.md) with ROS and Clover toolkit.
+> **Hint** You can use the [preconfigured virtual machine image](simulation_vm.md) with ROS and Drona toolkit.
 
 Install package `ros-noetic-desktop-full` or `ros-noetic-desktop` using the [installation documentation](http://wiki.ros.org/noetic/Installation/Ubuntu).
 
 Start rviz
 ---
 
-To start the Clover state visualization in real time, connect to it [via Wi-Fi](wifi.md) (`clover-xxxx`) and run rviz, specifying an appropriate ROS_MASTER_URI:
+To start the Drona state visualization in real time, connect to it [via Wi-Fi](wifi.md) (`drona-xxxx`) and run rviz, specifying an appropriate ROS_MASTER_URI:
 
 ```(bash)
 ROS_MASTER_URI=http://192.168.11.1:11311 rviz
@@ -54,7 +54,7 @@ Starting the rqt toolkit
 
 ![rqt](../assets/rqt.png)
 
-To start rqt for monitoring Clover status, use command:
+To start rqt for monitoring Drona status, use command:
 
 ```(bash)
 ROS_MASTER_URI=http://192.168.11.1:11311 rqt

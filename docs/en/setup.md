@@ -27,7 +27,7 @@ Main article: https://docs.qgroundcontrol.com/en/SetupView/Firmware.html
 
 > **Note** Do not connect your flight controller prior to flashing.
 
-We recommend using the modified version of [PX4 with COEX patches](firmware.md) for the Clover drone, especially for autonomous flights. Download the latest stable version **<a class="latest-firmware v4" href="https://github.com/CopterExpress/Firmware/releases">from our GitHub</a>**.
+We recommend using the modified version of [PX4 with COEX patches](firmware.md) for the Drona drone, especially for autonomous flights. Download the latest stable version **<a class="latest-firmware v4" href="https://github.com/CopterExpress/Firmware/releases">from our GitHub</a>**.
 
 To use all the most recent PX4 functions you also can use the latest official firmware version (experimentally).
 
@@ -72,12 +72,12 @@ This is how the main QGroundControl settings window will look like:
 
 ### Selecting the airframe
 
-<img src="../assets/qgc-frame-apply-clover4.png" alt="QGroundControl frame selection" class="zoom">
+<img src="../assets/qgc-frame-apply-drona4.png" alt="QGroundControl frame selection" class="zoom">
 
 1. Open the *Vehicle Setup* tab.
 2. Select the *Airframe* menu.
 3. Select the *Quadrotor X* airframe type.
-4. For Clover 4 select *COEX Clover 4* from the dropdown menu. Otherwise select *Generic Quadrotor X*.
+4. For Drona 4 select *COEX Drona 4* from the dropdown menu. Otherwise select *Generic Quadrotor X*.
 5. Return to the top of the list and press *Apply and Restart* button, confirm by pressing *Apply*.
 6. Wait for the settings to be applied and for the flight controller to restart.
 
@@ -91,9 +91,9 @@ Press the *Save* button to save the changed value to the flight controller. Chan
 
 #### Configuring PID regulators
 
-> **Info** Selecting *COEX Clover 4* frame subtype doesn't require setting PID coefficients.
+> **Info** Selecting *COEX Drona 4* frame subtype doesn't require setting PID coefficients.
 
-##### Averaged PID coefficients for the Clover 4 drone
+##### Averaged PID coefficients for the Drona 4 drone
 
 * `MC_PITCHRATE_P` = 0.087
 * `MC_PITCHRATE_I` = 0.037
@@ -109,7 +109,7 @@ Press the *Save* button to save the changed value to the flight controller. Chan
 * `MPC_Z_VEL_P` = 0.24
 * `MPC_Z_P` = 1.2
 
-##### Averaged PID coefficients for the Clover 3 drone
+##### Averaged PID coefficients for the Drona 3 drone
 
 * `MC_PITCHRATE_P` = 0.145
 * `MC_PITCHRATE_I` = 0.050

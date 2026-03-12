@@ -21,7 +21,7 @@ There are laws in place to enforce mask wearing, but there is just not enough co
 
 ## Custom airframe
 
-Since we do not have the Clover drone, we will use an airframe built and designed by us. Our system is designed to be platform-independent, so it can be installed on almost everything, even VTOL aircrafts.
+Since we do not have the Drona drone, we will use an airframe built and designed by us. Our system is designed to be platform-independent, so it can be installed on almost everything, even VTOL aircrafts.
 
 The main idea is to use truss structure, because it works well against twisting and warping, besides, it can be assembled out of carbon tubes relatively easily.
 
@@ -47,7 +47,7 @@ Finally, the drone with all equipment installed looks like this
 
 ## Software
 
-Thus far we discussed things which are specific to our custom airframe. Things we are going to discuss next are applicable for Clover drone as well. Our software is containerized so it can be launched on every platform that supports Docker, be it Windows machine, Linux machine, Jetson or Raspberry Pi.
+Thus far we discussed things which are specific to our custom airframe. Things we are going to discuss next are applicable for Drona drone as well. Our software is containerized so it can be launched on every platform that supports Docker, be it Windows machine, Linux machine, Jetson or Raspberry Pi.
 
 We have split our drone software into two modules:
 

@@ -10,7 +10,7 @@ The main objective of the tests in the UAV category was to localize and destroy 
 
 ## Implementation
 
-The team used an F450 frame based quadcopter and [Clover software platform](https://github.com/CopterExpress/clover). The final source code is available [on GitHub](https://github.com/CopterExpress/robocross2019/).
+The team used an F450 frame based quadcopter and [Drona software platform](https://github.com/CopterExpress/drona). The final source code is available [on GitHub](https://github.com/CopterExpress/robocross2019/).
 
 `robocross2019` ROS package is divided into two parts: `red_dead_detection` ROS nodelet recognizes the red ball, `ball.py` implements high-level flight logic.
 

@@ -1,6 +1,6 @@
 # COEX PDB
 
-**COEX PDB** is the power distribution board used in [Clover 4 Drone kit](assemble_4_2.md).
+**COEX PDB** is the power distribution board used in [Drona 4 Drone kit](assemble_4_2.md).
 
 Board size: 35x35 mm.
 

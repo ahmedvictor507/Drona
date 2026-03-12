@@ -1,0 +1,16 @@
+[Unit]
+Description=Drona ROS package
+Requires=roscore.service
+
+[Service]
+User=pi
+ExecStart=/bin/bash -c ". /home/pi/catkin_ws/devel/setup.sh; \
+                      ROS_HOSTNAME=`hostname`.local exec stdbuf -o L roslaunch drona drona.launch --wait --screen --skip-log-check \
+                      2> >(tee /tmp/drona.err)"
+
+ExecStartPre=+rm /var/log/drona.log
+StandardOutput=file:/var/log/drona.log
+StandardError=file:/var/log/drona.log
+
+[Install]
+WantedBy=multi-user.target

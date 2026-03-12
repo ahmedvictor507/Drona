@@ -1,20 +1,20 @@
 # Simulation VM setup
 
-In addition to [native installation instructions](simulation_native.md), we provide a [preconfigured developer virtual machine image](https://github.com/CopterExpress/clover_vm/releases/latest). The image contains:
+In addition to [native installation instructions](simulation_native.md), we provide a [preconfigured developer virtual machine image](https://github.com/CopterExpress/drona_vm/releases/latest). The image contains:
 
 * Ubuntu 20.04 with XFCE lightweight desktop environment;
-* ROS packages required to develop for the Clover platform;
+* ROS packages required to develop for the Drona platform;
 * QGroundControl;
 * preconfigured Gazebo simulation environment;
 * Visual Studio Code with C++ and Python plugins.
 
-> **Info** The default username on the VM is `clover`, with password `clover`.
+> **Info** The default username on the VM is `drona`, with password `drona`.
 
 The VM is an easy way to set up a simulation environment, but can be used as a development environment for a real drone as well.
 
 ## Downloading
 
-You can download the latest VM image [in the VM releases repository](https://github.com/CopterExpress/clover_vm/releases).
+You can download the latest VM image [in the VM releases repository](https://github.com/CopterExpress/drona_vm/releases).
 
 ## Setting up the VM
 
@@ -51,7 +51,7 @@ Make sure that you have hardware virtualization enabled in your BIOS/UEFI (it ma
 
     ![No 3D support from host](../assets/simulation_setup_vm/08_no_3d_acceleration.png)
 
-    Make sure you have the latest GPU drivers for your host system. If the warnings persist, add the following line to `clover-devel.vmx` (actual file name may differ based on the VM name):
+    Make sure you have the latest GPU drivers for your host system. If the warnings persist, add the following line to `drona-devel.vmx` (actual file name may differ based on the VM name):
 
     ```
     mks.gl.allowBlacklistedDrivers = "TRUE"

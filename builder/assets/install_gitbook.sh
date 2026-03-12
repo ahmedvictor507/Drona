@@ -6,4 +6,4 @@
 export NPM_CONFIG_UNSAFE_PERM=1
 
 npm install gitbook-cli -g
-gitbook fetch 3.2.3 && npm i npm@3.10.10 --prefix=~/.gitbook/versions/3.2.3/ # fixing https://travis-ci.org/github/CopterExpress/clover/jobs/766541125#L932
+gitbook fetch 3.2.3 && npm i npm@3.10.10 --prefix=~/.gitbook/versions/3.2.3/ # fixing https://travis-ci.org/github/CopterExpress/drona/jobs/766541125#L932

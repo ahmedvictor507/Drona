@@ -2,7 +2,7 @@
 
 Настройка среды для симуляции с нуля требует некоторых усилий, однако это приведет к улучшению производительности и к уменьшению вероятности появления проблем с драйверами.
 
-<!-- > **Hint** Смотрите актуальный набор команд установки необходимого ПО для запуска симулятора Клевера в скрипте сборки виртуальной машины с симулятором: [`install_software.sh`](https://github.com/CopterExpress/clover_vm/blob/master/scripts/install_software.sh). -->
+<!-- > **Hint** Смотрите актуальный набор команд установки необходимого ПО для запуска симулятора Клевера в скрипте сборки виртуальной машины с симулятором: [`install_software.sh`](https://github.com/CopterExpress/drona_vm/blob/master/scripts/install_software.sh). -->
 
 Требования для сборки: **Ubuntu 20.04**.
 
@@ -35,11 +35,11 @@ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Склонируйте исходный код пакетов Clover:
+Склонируйте исходный код пакетов Drona:
 
 ```bash
 cd ~/catkin_ws/src
-git clone --depth 1 https://github.com/CopterExpress/clover
+git clone --depth 1 https://github.com/CopterExpress/drona
 git clone --depth 1 https://github.com/CopterExpress/ros_led
 git clone --depth 1 https://github.com/ethz-asl/mav_comm
 ```
@@ -56,7 +56,7 @@ rosdep install --from-paths src --ignore-src -y
 Установите Python-зависимости:
 
 ```bash
-sudo /usr/bin/python3 -m pip install -r ~/catkin_ws/src/clover/clover/requirements.txt
+sudo /usr/bin/python3 -m pip install -r ~/catkin_ws/src/drona/drona/requirements.txt
 ```
 
 ## Загрузка исходного кода PX4
@@ -102,7 +102,7 @@ pip3 install --user toml
 Добавьте в PX4 раму Клевера с помощью следующей команды:
 
 ```bash
-ln -s ~/catkin_ws/src/clover/clover_simulation/airframes/* ~/PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes/
+ln -s ~/catkin_ws/src/drona/drona_simulation/airframes/* ~/PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes/
 ```
 
 ## Установка датасетов geographiclib
@@ -129,10 +129,10 @@ catkin_make -j1
 Чтобы удостовериться в том, что все было собрано корректно, попробуйте запустить симулятор:
 
 ```bash
-roslaunch clover_simulation simulator.launch
+roslaunch drona_simulation simulator.launch
 ```
 
-Вы можете проверить автономный полет используя скрипты в директории `~/catkin_ws/src/clover/clover/examples`.
+Вы можете проверить автономный полет используя скрипты в директории `~/catkin_ws/src/drona/drona/examples`.
 
 ## Дополнительные шаги
 
@@ -145,8 +145,8 @@ echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
 Опционально вы можете установить systemd-сервис для roscore для того, чтобы roscore был постоянно запущен в фоне:
 
 ```bash
-sed -i "s/pi/$USER/g" ~/catkin_ws/src/clover/builder/assets/roscore.service
-sudo cp ~/catkin_ws/src/clover/builder/assets/roscore.service /etc/systemd/system
+sed -i "s/pi/$USER/g" ~/catkin_ws/src/drona/builder/assets/roscore.service
+sudo cp ~/catkin_ws/src/drona/builder/assets/roscore.service /etc/systemd/system
 sudo systemctl enable roscore
 sudo systemctl start roscore
 ```
@@ -156,11 +156,11 @@ sudo systemctl start roscore
 Установите любой веб-сервер, чтобы раздавать веб-инструменты Клевера (директория `~/.ros/www`), например, Monkey:
 
 ```bash
-wget https://github.com/CopterExpress/clover_vm/raw/master/assets/packages/monkey_1.6.9-1_$(dpkg --print-architecture).deb -P /tmp
+wget https://github.com/CopterExpress/drona_vm/raw/master/assets/packages/monkey_1.6.9-1_$(dpkg --print-architecture).deb -P /tmp
 sudo dpkg -i /tmp/monkey_*.deb
-sed "s/pi/$USER/g" ~/catkin_ws/src/clover/builder/assets/monkey | sudo tee /etc/monkey/sites/default
+sed "s/pi/$USER/g" ~/catkin_ws/src/drona/builder/assets/monkey | sudo tee /etc/monkey/sites/default
 sudo sed -i 's/SymLink Off/SymLink On/' /etc/monkey/monkey.conf
-sudo cp ~/catkin_ws/src/clover/builder/assets/monkey.service /etc/systemd/system/monkey.service
+sudo cp ~/catkin_ws/src/drona/builder/assets/monkey.service /etc/systemd/system/monkey.service
 sudo systemctl enable monkey
 sudo systemctl start monkey
 ```
@@ -168,7 +168,7 @@ sudo systemctl start monkey
 Создайте директорию `~/.ros/www` следующей командой:
 
 ```bash
-rosrun clover www
+rosrun drona www
 ```
 
 При обновлении набора пакетов, содержащих веб-часть (через каталог `www`), также необходимо выполнение данной команды.

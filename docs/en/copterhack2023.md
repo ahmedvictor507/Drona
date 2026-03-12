@@ -6,9 +6,9 @@ CopterHack 2023 is an international open-source projects competition on aerial r
 
 To learn more about the articles of the CopterHack finalist teams follow the links [CopterHack 2021](copterhack2021.md), [CopterHack 2022](copterhack2022.md).
 
-The proposed projects are supposed to be open-source and be compatible with the Clover quadcopter platform. Teams-participants are supposed to work on their projects throughout the competition, bringing them closer to the state of the finished product while being assisted by industry experts through lectures and regular feedback.
+The proposed projects are supposed to be open-source and be compatible with the Drona quadcopter platform. Teams-participants are supposed to work on their projects throughout the competition, bringing them closer to the state of the finished product while being assisted by industry experts through lectures and regular feedback.
 
-Final of the CopterHack 2022 was held on May 27, 2023. The winner team was the team 🇷🇺 **[Clover Cloud Platform](clover-cloud-platform.md)**.
+Final of the CopterHack 2022 was held on May 27, 2023. The winner team was the team 🇷🇺 **[Drona Cloud Platform](drona-cloud-platform.md)**.
 
 ## Full stream of the final
 
@@ -18,23 +18,23 @@ Final of the CopterHack 2022 was held on May 27, 2023. The winner team was the t
 
 |Place|Team|Project|Points|
 |:-:|-|-|-|
-|1|🇷🇺 Clover Cloud Team|[Clover Cloud Platform](clover-cloud-platform.md)|21.7|
-|2|🇧🇾 FTL|[Advanced Clover 2](advanced_clover_simulator_platform.md)|21|
-|3|🇨🇦 Clover with Motion Capture System|[Clover with Motion Capture System](mocap_clover.md)|20.5|
+|1|🇷🇺 Drona Cloud Team|[Drona Cloud Platform](drona-cloud-platform.md)|21.7|
+|2|🇧🇾 FTL|[Advanced Drona 2](advanced_drona_simulator_platform.md)|21|
+|3|🇨🇦 Drona with Motion Capture System|[Drona with Motion Capture System](mocap_drona.md)|20.5|
 |4|🇧🇷 Atena|[Swarm in Blocks 2](swarm_in_blocks_2.md)|20.3|
 |5|🇷🇺 C305|[Система радио-навигации](../ru/nav-beacon.html)|17.5|
 |6|🇮🇳 DJS PHOENIX|[Autonomous Racing Drone](djs_phoenix_chetak.md)|14.6|
-|7|🇷🇺 Lyceum №128|[Network of Clover charging stations](liceu128.md)|13.7|
-|✕|🇰🇬 Zavarka|[Система обмена грузами с помощью конвейера](https://github.com/aiurobotics/clover/blob/conveyance/docs/ru/conveyance.md)||
-|✕|🇷🇺 FSOTM|[Drone Interceptor](https://github.com/deadln/clover/blob/interceptor/docs/ru/interceptor.md)||
-|✕|🇰🇬 Homelesses|[Trash Collector](https://github.com/Isa-jesus/clover/blob/trash-collector/docs/ru/show_maker.md)||
-|✕|🇷🇺 Digital otters|[Digital otters](https://github.com/Mentalsupernova/clover_cool/blob/new-article.md/docs/ru/new-article.md)||
-|✕|🇷🇺 Light Flight|[Сопровождение БПЛА при посадке](https://github.com/SirSerow/clover_inertial_ns/blob/inertial-1/Description.md)||
-|✕|🇰🇬 LiveSavers|[LiveSavers](https://github.com/Sarvar00/clover/blob/livesavers/docs/ru/livesaver.md)||
-|✕|🇷🇺 XenCOM|[Bound by fate](https://github.com/xenkek/clover/blob/xenkek-patch-1/docs/ru/bound_by_fate.md)||
-|✕|🇷🇺 Ava_Clover|[DoubleClover](https://github.com/bessiaka/clover/blob/Ava_Clover/docs/ru/soosocta.md)||
-|✕|🇷🇺 TPU_1|[Совместная транспортировка груза](https://github.com/shamoleg/clover/blob/tpu_1/docs/ru/tpu_1.md)||
-|✕|🇷🇺 TPU_2|[Алгоритм полета сквозь лесную местность](https://github.com/shamoleg/clover/blob/tpu_2/docs/ru/tpu_2.md)|&nbsp;|
+|7|🇷🇺 Lyceum №128|[Network of Drona charging stations](liceu128.md)|13.7|
+|✕|🇰🇬 Zavarka|[Система обмена грузами с помощью конвейера](https://github.com/aiurobotics/drona/blob/conveyance/docs/ru/conveyance.md)||
+|✕|🇷🇺 FSOTM|[Drone Interceptor](https://github.com/deadln/drona/blob/interceptor/docs/ru/interceptor.md)||
+|✕|🇰🇬 Homelesses|[Trash Collector](https://github.com/Isa-jesus/drona/blob/trash-collector/docs/ru/show_maker.md)||
+|✕|🇷🇺 Digital otters|[Digital otters](https://github.com/Mentalsupernova/drona_cool/blob/new-article.md/docs/ru/new-article.md)||
+|✕|🇷🇺 Light Flight|[Сопровождение БПЛА при посадке](https://github.com/SirSerow/drona_inertial_ns/blob/inertial-1/Description.md)||
+|✕|🇰🇬 LiveSavers|[LiveSavers](https://github.com/Sarvar00/drona/blob/livesavers/docs/ru/livesaver.md)||
+|✕|🇷🇺 XenCOM|[Bound by fate](https://github.com/xenkek/drona/blob/xenkek-patch-1/docs/ru/bound_by_fate.md)||
+|✕|🇷🇺 Ava_Drona|[DoubleDrona](https://github.com/bessiaka/drona/blob/Ava_Drona/docs/ru/soosocta.md)||
+|✕|🇷🇺 TPU_1|[Совместная транспортировка груза](https://github.com/shamoleg/drona/blob/tpu_1/docs/ru/tpu_1.md)||
+|✕|🇷🇺 TPU_2|[Алгоритм полета сквозь лесную местность](https://github.com/shamoleg/drona/blob/tpu_2/docs/ru/tpu_2.md)|&nbsp;|
 
 See all points by criteria in the [full table](https://docs.google.com/spreadsheets/d/1qTpW8zFVdSEGnbtOvMgQD6DcYwu8URFt1RKOCeUaOe8).
 
@@ -52,13 +52,13 @@ The qualifying and project development stages will be held in an online format, 
 General project requirements:
 
 1. Open-source.
-2. Compatibility with the Clover platform.
+2. Compatibility with the Drona platform.
 
 Judging criteria for the jury at the final:
 
 1. Readiness and the article (max. 10 points): the degree of readiness of the project; an accessible and understandable description of the project in the article; a link to the code with comments, diagrams, drawings. It should be possible to reproduce the project and get the result according to the article.
 2. Amount of work done (max. 6 points): the amount of work done by the team in the framework within of CopterHack, its complexity, and the technical level.
-3. Usefulness for Clover (max. 6 points): the relevance to the Clover and PX4 platform application in practice, the potential level of demand from other Clover users.
+3. Usefulness for Drona (max. 6 points): the relevance to the Drona and PX4 platform application in practice, the potential level of demand from other Drona users.
 4. Presentation at the final (max. 3 points): quality and entertainment points of the final presentation; completeness of the project coverage; demonstration; answers to the jury's questions.
 
 ## Prize fund
@@ -77,9 +77,9 @@ The competition partners can reward the teams according to additional criteria i
 
 > **Note** In order to be able to apply, you must have an account on [GitHub](https://github.com).
 
-Prepare your application and send it as a Draft Pull Request to [Clover repository](https://github.com/CopterExpress/clover)
+Prepare your application and send it as a Draft Pull Request to [Drona repository](https://github.com/CopterExpress/drona)
 
-1. Fork the Clover repository:
+1. Fork the Drona repository:
 
     <img src="../assets/github_application/github-fork.png" alt="GitHub Fork">
 
@@ -117,9 +117,9 @@ Prepare your application and send it as a Draft Pull Request to [Clover reposito
    
    Describe how you see the project result.
    
-   ### Using Clover platform
+   ### Using Drona platform
    
-   Describe how the Clover platform will be used in your project.
+   Describe how the Drona platform will be used in your project.
    
    ### Additional information at the request of participants
    
@@ -134,7 +134,7 @@ Prepare your application and send it as a Draft Pull Request to [Clover reposito
 
 6. If necessary, place additional visual assets in the `docs/assets` folder and add them to your article.
 
-7. Send a Draft Pull Request from your branch to Clover:
+7. Send a Draft Pull Request from your branch to Drona:
 
     <img src="../assets/github_application/github-pull-request-create.png" alt="GitHub Create Pull">
 
@@ -144,7 +144,7 @@ Prepare your application and send it as a Draft Pull Request to [Clover reposito
 
 10. During the contest, you will work on this document, bringing it closer to the finished state. By the end of the contest you are expected to publish your article which is supposed to be the result of your work in CopterHack.
 
-Teams-participants are supposed to be added to the special Telegram group, where one can send the project's updates and get feedback from the Jury. For all participating teams, COEX will provide a 40% discount on the Clover drone kit.
+Teams-participants are supposed to be added to the special Telegram group, where one can send the project's updates and get feedback from the Jury. For all participating teams, COEX will provide a 40% discount on the Drona drone kit.
 
 > **Info** There are no restrictions on the age, education, and number of people in a team.
 

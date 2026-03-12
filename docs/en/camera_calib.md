@@ -51,7 +51,7 @@ Glue a printed target to any solid surface. Count the number of intersections on
 
 ![img](../assets/chessboard.jpg)
 
-Turn on Clover and connect to its Wi-Fi.
+Turn on Drona and connect to its Wi-Fi.
 
 > Navigate to 192.168.11.1:8080 and check whether the computer receives images from the image_raw topic.
 
@@ -156,7 +156,7 @@ Function ***get_undistorted_image(cv2_image, camera_info)*** is responsible for 
 
 The function returns a cv2 array, into which the corrected image is coded.
 
-> If you are using a fisheye camera provided with Clover, for processing images with resolution 320x240 or 640x480, you can use the existing calibration settings. To do this, pass parameters ***clever_cam_calibration.clevercamcalib.CLEVER_FISHEYE_CAM_320*** or ***clever_cam_calibration.clevercamcalib.CLEVER_FISHEYE_CAM_640*** as argument ***camera_info***, respectively.
+> If you are using a fisheye camera provided with Drona, for processing images with resolution 320x240 or 640x480, you can use the existing calibration settings. To do this, pass parameters ***clever_cam_calibration.clevercamcalib.CLEVER_FISHEYE_CAM_320*** or ***clever_cam_calibration.clevercamcalib.CLEVER_FISHEYE_CAM_640*** as argument ***camera_info***, respectively.
 
 ## Examples of operation
 
@@ -176,7 +176,7 @@ Corrected images:
 
 **Processing image stream from the camera**.
 
-This program receives images from the camera on Clover and displays them on the screen in corrected for, using the existing calibration file.
+This program receives images from the camera on Drona and displays them on the screen in corrected for, using the existing calibration file.
 
 ```python
 import clevercamcalib.clevercamcalib as ccc
@@ -195,9 +195,9 @@ cv2.destroyAllWindows()
 
 ## The usage for ArUco
 
-To apply the calibration parameters to the ArUco navigation system, move the calibration .yaml file to Raspberry Pi of Clover, and initialize it.
+To apply the calibration parameters to the ArUco navigation system, move the calibration .yaml file to Raspberry Pi of Drona, and initialize it.
 
-> Don't forget to connect to Wi-Fi of Clover.
+> Don't forget to connect to Wi-Fi of Drona.
 
 The SFTP protocol is used for transferring the file. This example, WinSCP program is used.
 

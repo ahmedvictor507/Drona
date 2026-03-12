@@ -1,8 +1,8 @@
 # Автономный полет
 
-> **Note** Документация для версий [образа](image.md), начиная с версии **0.24**. Для более ранних версий см. [документацию для версии **0.23**](https://github.com/CopterExpress/clover/blob/v0.23/docs/ru/simple_offboard.md).
+> **Note** Документация для версий [образа](image.md), начиная с версии **0.24**. Для более ранних версий см. [документацию для версии **0.23**](https://github.com/CopterExpress/drona/blob/v0.23/docs/ru/simple_offboard.md).
 
-Модуль `simple_offboard` пакета `clover` предназначен для упрощенного программирования автономного полета дрона ([режим](modes.md) `OFFBOARD`). Он позволяет устанавливать желаемые полетные задачи и автоматически трансформирует [систему координат](frames.md).
+Модуль `simple_offboard` пакета `drona` предназначен для упрощенного программирования автономного полета дрона ([режим](modes.md) `OFFBOARD`). Он позволяет устанавливать желаемые полетные задачи и автоматически трансформирует [систему координат](frames.md).
 
 `simple_offboard` является высокоуровневым способом взаимодействия с полетным контроллером. Для более низкоуровневой работы см. [mavros](mavros.md).
 
@@ -14,7 +14,7 @@
 
 ```python
 import rospy
-from clover import srv
+from drona import srv
 from std_srvs.srv import Trigger
 
 rospy.init_node('flight')

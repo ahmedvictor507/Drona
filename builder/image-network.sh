@@ -51,7 +51,7 @@ echo_stamp "#3 Write dhcp-config to /etc/dnsmasq.conf"
 
 cat << EOF >> /etc/dnsmasq.conf
 interface=wlan0
-address=/clover/coex/192.168.11.1
+address=/drona/coex/192.168.11.1
 dhcp-range=192.168.11.100,192.168.11.200,12h
 no-hosts
 filterwin2k

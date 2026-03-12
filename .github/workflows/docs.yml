@@ -50,20 +50,20 @@ jobs:
         continue-on-error: ${{ env.GITBOOK_SKIP_PDF != '' }}
         if: ${{ github.event_name == 'push' }}
         run: |
-          for i in 1 2 3 4; do gitbook pdf ./ _book/clover.pdf && break || sleep 1; done
+          for i in 1 2 3 4; do gitbook pdf ./ _book/drona.pdf && break || sleep 1; done
           sudo apt-get -q install ghostscript
-          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/clover_ru_compressed.pdf _book/clover_ru.pdf
-          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/clover_en_compressed.pdf _book/clover_en.pdf
-          rm _book/clover_ru.pdf && mv _book/clover_ru_compressed.pdf _book/clover_ru.pdf
-          rm _book/clover_en.pdf && mv _book/clover_en_compressed.pdf _book/clover_en.pdf
-          ls -lah _book/clover*.pdf
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/drona_ru_compressed.pdf _book/drona_ru.pdf
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -dDetectDuplicateImages -dCompressFonts=true -r150 -sOutputFile=_book/drona_en_compressed.pdf _book/drona_en.pdf
+          rm _book/drona_ru.pdf && mv _book/drona_ru_compressed.pdf _book/drona_ru.pdf
+          rm _book/drona_en.pdf && mv _book/drona_en_compressed.pdf _book/drona_en.pdf
+          ls -lah _book/drona*.pdf
           echo '::set-output name=GITBOOK_PDF_OK::1'
       - name: Download older PDFs
         if: ${{ !steps.generate-pdf.outputs.GITBOOK_PDF_OK }}
         run: |
-          rm -f _book/clover*.pdf
-          wget --no-verbose https://clover.coex.tech/clover_ru.pdf -P _book/
-          wget --no-verbose https://clover.coex.tech/clover_en.pdf -P _book/
+          rm -f _book/drona*.pdf
+          wget --no-verbose https://drona.coex.tech/drona_ru.pdf -P _book/
+          wget --no-verbose https://drona.coex.tech/drona_en.pdf -P _book/
       - name: Upload artifact
         # if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         uses: actions/upload-pages-artifact@v3

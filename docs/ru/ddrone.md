@@ -69,12 +69,12 @@ python servo.py
 
 ```bash
 scp visual_ddrone-master.zip pi@192.168.11.1:/home/pi
-cd catkin_ws/src/clover/clover/www
+cd catkin_ws/src/drona/drona/www
 unzip /home/pi/visual_ddrone-master.zip .
 mv visual_ddrone-master ddrone
 ```
 
-Теперь чтобы открыть веб-интерфейс нужно перейти по ссылке [http://192.168.11.1/clover/ddrone](http://192.168.11.1/clover/ddrone).
+Теперь чтобы открыть веб-интерфейс нужно перейти по ссылке [http://192.168.11.1/drona/ddrone](http://192.168.11.1/drona/ddrone).
 
 ## Веб-интерфейс
 

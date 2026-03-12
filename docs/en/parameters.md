@@ -2,7 +2,7 @@
 
 Full documentation on PX4 parameters: https://docs.px4.io/master/en/advanced_config/parameter_reference.html.
 
-For changing PX4 parameters, use QGroundControl software, [connect to Clover over Wi-Fi](gcs_bridge.md) or USB. Go to *Vehicle Setup* panel (click on the QGroundControl logo in the top-left corner) and choose *Parameters* menu.
+For changing PX4 parameters, use QGroundControl software, [connect to Drona over Wi-Fi](gcs_bridge.md) or USB. Go to *Vehicle Setup* panel (click on the QGroundControl logo in the top-left corner) and choose *Parameters* menu.
 
 ## Recommended values
 
@@ -63,7 +63,7 @@ In case of using EKF2 (official firmware):
 
 <!-- markdownlint-enable MD031 -->
 
-> **Info** See also: list of default parameters of the [Clover simulator](simulation.md): https://github.com/CopterExpress/clover/blob/master/clover_simulation/airframes/4500_clover.
+> **Info** See also: list of default parameters of the [Drona simulator](simulation.md): https://github.com/CopterExpress/drona/blob/master/drona_simulation/airframes/4500_drona.
 
 ## Additional information
 

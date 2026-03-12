@@ -12,7 +12,7 @@ MAVROS подписывается на определенные ROS-топики
 
 <!-- -->
 
-> **Note** В пакете `clover` некоторые плагины MAVROS отключены (в целях сохранения ресурсов). Подробнее см. параметр `plugin_blacklist` в файле `/home/pi/catkin_ws/src/clover/clover/launch/mavros.launch`.
+> **Note** В пакете `drona` некоторые плагины MAVROS отключены (в целях сохранения ресурсов). Подробнее см. параметр `plugin_blacklist` в файле `/home/pi/catkin_ws/src/drona/drona/launch/mavros.launch`.
 
 ## Основные сервисы
 

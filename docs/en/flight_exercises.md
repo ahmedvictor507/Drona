@@ -103,7 +103,7 @@ Main tasks:
 
 Similarly to the previous exercises, perform [the following steps](#pre-flight-checks) before take off.
 
-**Exercise №1**. Raise the throttle stick until the copter flies over the air cushion and is above it (height from floor ~ 25-30 cm, for Clover 4 copter). The aircraft should not climb up or fall down, the flight altitude should stabilize. As in the previous exercise, adjust the X and Y position of the aircraft using the roll and pitch sticks. As a result, the copter should hover at one point with slight wiggle to the sides. Hold the aircraft for 30–40 seconds.
+**Exercise №1**. Raise the throttle stick until the copter flies over the air cushion and is above it (height from floor ~ 25-30 cm, for Drona 4 copter). The aircraft should not climb up or fall down, the flight altitude should stabilize. As in the previous exercise, adjust the X and Y position of the aircraft using the roll and pitch sticks. As a result, the copter should hover at one point with slight wiggle to the sides. Hold the aircraft for 30–40 seconds.
 
 **Exercise №2**. Raise the aircraft on the air cushion and stabilize it at one point. Next, fly over a square with a side of 1 m, first clockwise, then counterclockwise. Repeat the path 2–3 times in each direction.
 

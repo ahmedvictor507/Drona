@@ -21,7 +21,7 @@
 		});
 
 		// Declare get_telemetry service client
-		var getTelemetry = new ROSLIB.Service({ ros: ros, name : '/get_telemetry', serviceType : 'clover/GetTelemetry' });
+		var getTelemetry = new ROSLIB.Service({ ros: ros, name : '/get_telemetry', serviceType : 'drona/GetTelemetry' });
 
 		// Call get_telemetry
 		getTelemetry.callService(new ROSLIB.ServiceRequest({ frame_id: 'map' }), function(result) {
@@ -41,7 +41,7 @@
 
 [Взлет, посадка и все остальные операции](programming.md) могут быть осуществлены аналогичным образом.
 
-Страница должна быть помещена в каталог `/home/pi/catkin_ws/src/clover/clover/www/`. После этого она станет доступна по адресу `http://192.168.11.1/clover/<имя_страницы>.html`. При открытии страницы браузер должен показать окно с телеметрией дрона, а также постоянно выводить состояние полетного контроллера в консоль.
+Страница должна быть помещена в каталог `/home/pi/catkin_ws/src/drona/drona/www/`. После этого она станет доступна по адресу `http://192.168.11.1/drona/<имя_страницы>.html`. При открытии страницы браузер должен показать окно с телеметрией дрона, а также постоянно выводить состояние полетного контроллера в консоль.
 
 <img src="../assets/js-ros.png" class="center zoom"/>
 
@@ -49,6 +49,6 @@
 
 ## Браузерная GCS
 
-Смотрите также пример реализации ([`gcs.html`](https://github.com/CopterExpress/clover/blob/master/clover/www/gcs.html), [`gcs.js`](https://github.com/CopterExpress/clover/blob/master/clover/www/js/gcs.js)) упрощенной браузерной наземной станции (GCS) на Клевере по адресу http://192.168.11.1/clover/gcs.html.
+Смотрите также пример реализации ([`gcs.html`](https://github.com/CopterExpress/drona/blob/master/drona/www/gcs.html), [`gcs.js`](https://github.com/CopterExpress/drona/blob/master/drona/www/js/gcs.js)) упрощенной браузерной наземной станции (GCS) на Клевере по адресу http://192.168.11.1/drona/gcs.html.
 
 <img src="../assets/web-gcs.png" class="center zoom"/>

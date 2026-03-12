@@ -1,4 +1,4 @@
-# Clover and Jetson Nano
+# Drona and Jetson Nano
 
 ## Jetson Nano overview
 
@@ -12,7 +12,7 @@ Jetson Nano developer kits come with a carrier board that has USB 3.0, CSI and E
 
 ## Setting up
 
-Nvidia provides an SD card image with an operating system based on Ubuntu Linux 18.04 for Jetson Nano. This image is a good starting point for ROS and Clover installation.
+Nvidia provides an SD card image with an operating system based on Ubuntu Linux 18.04 for Jetson Nano. This image is a good starting point for ROS and Drona installation.
 
 ### Initial system setup
 
@@ -70,14 +70,14 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo python ./get-pip.py
 ```
 
-### Building Clover nodes
+### Building Drona nodes
 
-Create a "workspace" directory in your home folder and populate it with Clover packages:
+Create a "workspace" directory in your home folder and populate it with Drona packages:
 
 ```bash
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
-git clone https://github.com/CopterExpress/clover
+git clone https://github.com/CopterExpress/drona
 git clone https://github.com/CopterExpress/ros_led
 git clone https://github.com/okalachev/vl53l1x_ros
 ```
@@ -103,16 +103,16 @@ Install development libraries for OpenCV 3.2 (recent Jetson Nano images have Ope
 sudo apt install libopencv-dev=3.2.0+dfsg-4ubuntu0.1
 ```
 
-Finally, build the Clover nodes:
+Finally, build the Drona nodes:
 
 ```bash
 cd ~/catkin_ws
 catkin_make
 ```
 
-> **Hint** You may also want to add udev rules for PX4 flight controllers. Copy [the rules file](https://github.com/CopterExpress/clover/blob/master/clover/udev/99-px4fmu.rules) to `/etc/udev/rules.d` and run `sudo udevadm control --reload-rules && sudo udevadm trigger`.
+> **Hint** You may also want to add udev rules for PX4 flight controllers. Copy [the rules file](https://github.com/CopterExpress/drona/blob/master/drona/udev/99-px4fmu.rules) to `/etc/udev/rules.d` and run `sudo udevadm control --reload-rules && sudo udevadm trigger`.
 
-### Running Clover nodes
+### Running Drona nodes
 
 Set up the workspace environment:
 
@@ -124,10 +124,10 @@ source devel/setup.bash
 Configure the launch files to your taste and use `roslaunch` to launch the nodes:
 
 ```bash
-roslaunch clover clover.launch
+roslaunch drona drona.launch
 ```
 
-> **Hint** You may want to start the Clover nodes automatically. This can be done with `systemd`: look at service files for [`roscore`](https://github.com/CopterExpress/clover/blob/master/builder/assets/roscore.service) and [`clover`](https://github.com/CopterExpress/clover/blob/master/builder/assets/clover.service) that are used in our image and adjust them as necessary.
+> **Hint** You may want to start the Drona nodes automatically. This can be done with `systemd`: look at service files for [`roscore`](https://github.com/CopterExpress/drona/blob/master/builder/assets/roscore.service) and [`drona`](https://github.com/CopterExpress/drona/blob/master/builder/assets/drona.service) that are used in our image and adjust them as necessary.
 
 ## Caveats
 

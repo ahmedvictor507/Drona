@@ -25,7 +25,7 @@ Flight controller on stm32h7 with space for RPi CM4 and built-in ESP32 to create
 
 FMUv6U flight controller board and API for interacting with a distributed network via RPi.
 
-### Using the "Clover" platform
+### Using the "Drona" platform
 
 At the stage of the project: debugging and demonstration of capabilities. After: using CopterCat as the main one.
 

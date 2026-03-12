@@ -15,7 +15,7 @@ ls
 Перейти в директорию:
 
 ```bash
-cd catkin_ws/src/clover/clover/launch/
+cd catkin_ws/src/drona/drona/launch/
 ```
 
 Перейти на директорию выше:
@@ -75,16 +75,16 @@ sudo reboot
    Например:
 
    ```bash
-   nano ~/catkin_ws/src/clover/clover/launch/clover.launch
+   nano ~/catkin_ws/src/drona/drona/launch/drona.launch
    ```
 
    <img src="../assets/nano.png" alt="Редактирование файла в nano" data-action="zoom">
 2. Отредактируйте файл.
 3. Для выхода с сохранением нажмите `Ctrl`+`X`, `Y`, `Enter`.
-4. При изменении .launch-файлов необходимо перезапустить пакет `clover`:
+4. При изменении .launch-файлов необходимо перезапустить пакет `drona`:
 
    ```bash
-   sudo systemctl restart clover
+   sudo systemctl restart drona
    ```
 
 Для редактирования файлов также можно использовать и другие редакторы, например, **vim**.
@@ -94,7 +94,7 @@ sudo reboot
 Для сброса изменений всех файлов, относящихся к пакету Клевера (`launch`-файлы) используйте git:
 
 ```bash
-cd ~/catkin_ws/src/clover
+cd ~/catkin_ws/src/drona
 git checkout .
-sudo systemctl restart clover
+sudo systemctl restart drona
 ```

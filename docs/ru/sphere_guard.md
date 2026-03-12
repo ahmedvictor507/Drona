@@ -1,6 +1,6 @@
 # Сборка сферической защиты
 
-<img src="../assets/clover4_sphere_guard.png" width=300 class="zoom border center">
+<img src="../assets/drona4_sphere_guard.png" width=300 class="zoom border center">
 
 ## Сборка пояса сферы
 

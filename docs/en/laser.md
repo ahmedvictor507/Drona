@@ -1,10 +1,10 @@
 # Working with a laser rangefinder
 
-> **Note** Documentation for the [image](image.md), versions, starting with **0.20**. For older versions refer to [documentation for version **0.19**](https://github.com/CopterExpress/clover/blob/v0.19/docs/en/laser.md).
+> **Note** Documentation for the [image](image.md), versions, starting with **0.20**. For older versions refer to [documentation for version **0.19**](https://github.com/CopterExpress/drona/blob/v0.19/docs/en/laser.md).
 
 ## VL53L1X Rangefinder
 
-The rangefinder model recommended for Clover is STM VL53L1X. This rangefinder can measure distances from 0 to 4 m while ensuring high measurement accuracy.
+The rangefinder model recommended for Drona is STM VL53L1X. This rangefinder can measure distances from 0 to 4 m while ensuring high measurement accuracy.
 
 The [image for Raspberry Pi](image.md) contains pre-installed corresponding ROS driver.
 
@@ -22,7 +22,7 @@ If the pin marked GND is occupied, you can use any other ground pin (look at the
 
 ### Enabling the rangefinder
 
-[Connect via SSH](ssh.md) and edit file `~/catkin_ws/src/clover/clover/launch/clover.launch` so that the VL53L1X driver is enabled:
+[Connect via SSH](ssh.md) and edit file `~/catkin_ws/src/drona/drona/launch/drona.launch` so that the VL53L1X driver is enabled:
 
 ```xml
 <arg name="rangefinder_vl53l1x" default="true"/>
@@ -36,7 +36,7 @@ rostopic echo /rangefinder/range
 
 ### PX4 settings
 
-> **Hint** We recommend using our [custom PX4 firmware for Clover](firmware.md#modified-firmware-for-clover) for best laser rangefinder support.
+> **Hint** We recommend using our [custom PX4 firmware for Drona](firmware.md#modified-firmware-for-drona) for best laser rangefinder support.
 
 PX4 should be properly [configured](parameters.md) to use the rangefinder data.
 

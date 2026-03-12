@@ -39,16 +39,16 @@
 
     Если параметры в файле отличаются или отсутствуют, то отредактируйте файл и перезагрузите Raspberry Pi.
 
-5. Поменяйте в launch-файле Клевера (`~/catkin_ws/src/clover/clover/launch/clover.launch`) тип подключения с `usb` на `uart`:
+5. Поменяйте в launch-файле Клевера (`~/catkin_ws/src/drona/drona/launch/drona.launch`) тип подключения с `usb` на `uart`:
 
     ```xml
     <arg name="fcu_conn" default="uart"/>
     ```
 
-    При изменении launch-файла необходимо перезапустить сервис `clover`:
+    При изменении launch-файла необходимо перезапустить сервис `drona`:
 
     ```bash
-    sudo systemctl restart clover
+    sudo systemctl restart drona
     ```
 
 6. Убедитесь в работоспособности подключения:

@@ -1,38 +1,38 @@
 Software autorun
 ===
 
-> **Note** In the image version **0.20** `clever` package and service was renamed to `clover`. See [previous version of the article](https://github.com/CopterExpress/clover/blob/v0.19/docs/en/autolaunch.md) for older images.
+> **Note** In the image version **0.20** `clever` package and service was renamed to `drona`. See [previous version of the article](https://github.com/CopterExpress/drona/blob/v0.19/docs/en/autolaunch.md) for older images.
 
 systemd
 ---
 
 Main documentation: https://wiki.archlinux.org/title/Systemd.
 
-All automatically started Clover software is launched as a `clover.service` systemd service.
+All automatically started Drona software is launched as a `drona.service` systemd service.
 
 The service may be restarted by the `systemctl` command:
 
 ```(bash)
-sudo systemctl restart clover
+sudo systemctl restart drona
 ```
 
 Text output of the software can be viewed using the `journalctl` command:
 
 ```(bash)
-journalctl -u clover
+journalctl -u drona
 ```
 
-To run Clover software directly in the current console session, you can use the `roslaunch` command:
+To run Drona software directly in the current console session, you can use the `roslaunch` command:
 
 ```(bash)
-sudo systemctl restart clover
-roslaunch clover clover.launch
+sudo systemctl restart drona
+roslaunch drona drona.launch
 ```
 
-You can disable Clover software autolaunch using the `disable` command:
+You can disable Drona software autolaunch using the `disable` command:
 
 ```(bash)
-sudo systemctl disable clover
+sudo systemctl disable drona
 ```
 
 roslaunch
@@ -40,12 +40,12 @@ roslaunch
 
 Main documentation: http://wiki.ros.org/roslaunch.
 
-The list of nodes / programs declared for running is specified in file `/home/pi/catkin_ws/src/clover/clover/launch/clover.launch`.
+The list of nodes / programs declared for running is specified in file `/home/pi/catkin_ws/src/drona/drona/launch/drona.launch`.
 
-You can add your own node to the list of automatically launched ones. To do this, place your executable file (e.g. `my_program.py`) into folder `/home/pi/catkin_ws/src/clover/clover`. Then add the start of your node to `clover.launch`, for example:
+You can add your own node to the list of automatically launched ones. To do this, place your executable file (e.g. `my_program.py`) into folder `/home/pi/catkin_ws/src/drona/drona`. Then add the start of your node to `drona.launch`, for example:
 
 ```xml
-<node name="my_program" pkg="clover" type="my_program.py" output="screen"/>
+<node name="my_program" pkg="drona" type="my_program.py" output="screen"/>
 ```
 
 The started file must have *permission* to run:

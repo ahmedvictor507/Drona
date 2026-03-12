@@ -1,4 +1,4 @@
-# "QCS" - the network of Clover charging stations
+# "QCS" - the network of Drona charging stations
 
 [CopterHack-2023](copterhack2023.md), team **Lyceum 128**.
 
@@ -18,13 +18,13 @@ If you want to test station without drone you can use API Debug page. You must b
 
 There are Arduino Mega and Wemos D1 on the station.
 
-![scheme](https://github.com/Juli-Shvetsova/clover/assets/78372613/3ab05a79-0046-463b-83dd-4db06115909b)
+![scheme](https://github.com/Juli-Shvetsova/drona/assets/78372613/3ab05a79-0046-463b-83dd-4db06115909b)
 
 Wemos D1 connect with server to collect information, do tasks. Arduino Mega receive signals from Wemos and make physical updates such as moving landing platform, LED indication and other more.
 
 After completing mission Wemos send request to a server to confirm updates on the server.
 
-## Clover flight
+## Drona flight
 
 We're using recursive landing algorithm to achieve success landing. Small ArUco marker is on the landing platform. Camera can use this marker on the ~25cm height. Next drone use standard landing.
 

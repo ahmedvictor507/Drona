@@ -1,6 +1,6 @@
-# Step-by-step guide on autonomous flight with Clover 4
+# Step-by-step guide on autonomous flight with Drona 4
 
-> **Note** The following applies to [image version](image.md) **0.20** and up. See [previous version of the article](https://github.com/CopterExpress/clover/blob/v0.19/docs/en/auto_setup.md) for older images.
+> **Note** The following applies to [image version](image.md) **0.20** and up. See [previous version of the article](https://github.com/CopterExpress/drona/blob/v0.19/docs/en/auto_setup.md) for older images.
 
 This manual contains links to other articles in which each of the topics addressed is discussed in more detail. If you encounter difficulties while reading one of these articles, it is recommended that you return to this manual, since many operations here are described step by step and some unnecessary steps are skipped.
 
@@ -17,9 +17,9 @@ This manual contains links to other articles in which each of the topics address
 
 - Connect to Wi-Fi and open the web interface ([this article](wifi.md)).
 
-   After the first power-up, the network appears with a delay. You need to wait until the system is fully loaded. If the Clover network does not appear in the list of networks for a long time, reopen the window with the network selection. Then the list of networks will be updated.
+   After the first power-up, the network appears with a delay. You need to wait until the system is fully loaded. If the Drona network does not appear in the list of networks for a long time, reopen the window with the network selection. Then the list of networks will be updated.
 
-> **Hint** Now if you have connected to the Clover's Wi-Fi network, it is recommended to open the [local version of this guide](http://192.168.11.1/docs/ru/auto_setup.html), otherwise the links will not work.
+> **Hint** Now if you have connected to the Drona's Wi-Fi network, it is recommended to open the [local version of this guide](http://192.168.11.1/docs/ru/auto_setup.html), otherwise the links will not work.
 
 - Connect to Raspberry Pi via SSH.
 
@@ -49,7 +49,7 @@ This manual contains links to other articles in which each of the topics address
 
 ## Basic commands
 
-You will need the basic Linux commands, as well as special Clover commands, to work efficiently in the system.
+You will need the basic Linux commands, as well as special Drona commands, to work efficiently in the system.
 
 Show list of files and folders:
 
@@ -57,10 +57,10 @@ Show list of files and folders:
 ls
 ```
 
-Go to certain directory by entering the path too it (catkin_ws/src/clover/clover/launch/):
+Go to certain directory by entering the path too it (catkin_ws/src/drona/drona/launch/):
 
 ```bash
-cd catkin_ws/src/clover/clover/launch/
+cd catkin_ws/src/drona/drona/launch/
 ```
 
 Go to home directory:
@@ -75,10 +75,10 @@ Open the file `file.py`:
 nano file.py
 ```
 
-Open the file clover.launch by entering the full path to it (it works even if you're in a different directory):
+Open the file drona.launch by entering the full path to it (it works even if you're in a different directory):
 
 ```bash
-nano ~/catkin_ws/src/clover/clover/launch/clover.launch
+nano ~/catkin_ws/src/drona/drona/launch/drona.launch
 ```
 
 Save file (press sequentially):
@@ -105,16 +105,16 @@ Raspberry Pi complete reboot:
 sudo reboot
 ```
 
-Reboot only the `clover` service:
+Reboot only the `drona` service:
 
 ```bash
-sudo systemctl restart clover
+sudo systemctl restart drona
 ```
 
 Perform selfcheck:
 
 ```bash
-rosrun clover selfcheck.py
+rosrun drona selfcheck.py
 ```
 
 Stop a program:
@@ -129,10 +129,10 @@ Start a program `myprogram.py` using Python:
 python3 myprogram.py
 ```
 
-Journal of the events related to `clover` package. Scroll the list by pressing Enter or Ctrl+V (scrolls faster):
+Journal of the events related to `drona` package. Scroll the list by pressing Enter or Ctrl+V (scrolls faster):
 
 ```bash
-journalctl -u clover
+journalctl -u drona
 ```
 
 Open the sudoers file with super user rights (this particular file doesn't open without sudo. You can use sudo to open other locked files or run programs that require super user rights):
@@ -143,45 +143,45 @@ sudo nano /etc/sudoers
 
 ## Setting Raspberry Pi for autonomous flight
 
-Most of the parameters for autonomous flight are located in the following directory: `~/catkin_ws/src/clover/clover/launch/`.
+Most of the parameters for autonomous flight are located in the following directory: `~/catkin_ws/src/drona/drona/launch/`.
 
 - Enter the directory:
 
   ```bash
-  cd ~/catkin_ws/src/clover/clover/launch/
+  cd ~/catkin_ws/src/drona/drona/launch/
   ```
 
   The `~` symbol stands for home directory of your user. If you are already in the directory, you can go with just the command:
 
   ```bash
-  cd catkin_ws/src/clover/clover/launch/
+  cd catkin_ws/src/drona/drona/launch/
   ```
 
-  > **Hint** Tab can automatically complete the names of files, folders or commands. You need to start entering the desired name and press Tab. If there are no conflicts, the name will be auto completed. For example, to quickly enter the path to the `catkin_ws/src/clover/clover/launch/` directory, after entering `cd`, you can start typing the following key combination:`c-Tab-s-Tab-c-Tab-c-Tab-l-Tab`. This way you can save a lot of time when writing a long command, and also avoid possible mistakes in writing the path.
+  > **Hint** Tab can automatically complete the names of files, folders or commands. You need to start entering the desired name and press Tab. If there are no conflicts, the name will be auto completed. For example, to quickly enter the path to the `catkin_ws/src/drona/drona/launch/` directory, after entering `cd`, you can start typing the following key combination:`c-Tab-s-Tab-c-Tab-c-Tab-l-Tab`. This way you can save a lot of time when writing a long command, and also avoid possible mistakes in writing the path.
 
 - In this folder you need to configure three files:
 
-  - `clover.launch`
+  - `drona.launch`
   - `aruco.launch`
   - `main_camera.launch`
 
-- Open the file `clover.launch`:
+- Open the file `drona.launch`:
 
   ```bash
-  nano clover.launch
+  nano drona.launch
   ```
 
   You must be in the directory in which the file is located. If you are in other directory, you can open the file by writing the full path to it:
 
   ```bash
-  nano ~/catkin_ws/src/clover/clover/launch/clover.launch
+  nano ~/catkin_ws/src/drona/drona/launch/drona.launch
   ```
 
   If two users are editing a file at the same time, or if previously the file was closed incorrectly, nano will not display the file contents, it will ask for permission to display the file. To grant permission, press Y.
 
   If the content of a file is still empty, you may have entered the file name incorrectly. You need to pay attention to the extension. If you entered a wrong name or extension, nano will create a new empty file named this way, which is undesirable. Such file should be deleted.
 
-- Find the following line in clover.launch file:
+- Find the following line in drona.launch file:
 
   ```xml
   <arg name="aruco" default="false"/>
@@ -224,7 +224,7 @@ Most of the parameters for autonomous flight are located in the following direct
   - the marker map numbering is from the top left corner (key `--top-left`)
 
   ```bash
-  rosrun aruco_pose genmap.py 0.335 10 10 1 1 0 > ~/catkin_ws/src/clover/aruco_pose/map/map.txt --top-left
+  rosrun aruco_pose genmap.py 0.335 10 10 1 1 0 > ~/catkin_ws/src/drona/aruco_pose/map/map.txt --top-left
   ```
 
   In most maps, numbering starts with a zero marker. Also, in most cases, numbering starts from the upper left corner, so when generating, it is very important to enter the key `--top-left`.
@@ -271,10 +271,10 @@ and replace map.txt with your map name.
   Ctrl+x; y; Enter
   ```
 
-- Restart the `clover` service:
+- Restart the `drona` service:
 
   ```bash
-  sudo systemctl restart clover
+  sudo systemctl restart drona
   ```
 
 ## Setting the flight controller
@@ -291,7 +291,7 @@ and replace map.txt with your map name.
 
 - Connect remotely to the flight controller through QGroundControl.
 
-  All the necessary settings for that are already set in Clover. Now you need to create a new connection in QGroundControl. Use the settings from [this article](gcs_bridge.md).
+  All the necessary settings for that are already set in Drona. Now you need to create a new connection in QGroundControl. Use the settings from [this article](gcs_bridge.md).
 
 ## Remote controller setup
 
@@ -299,14 +299,14 @@ and replace map.txt with your map name.
 
   Set channel 5 to SwC switch; channel 5 to SwA switch. Or you can use any other switches you like.
 
-## Clover selfcheck
+## Drona selfcheck
 
 Perform selfcheck when you have set up your drone or when you have faced problems. The selfcheck process is described in the article "[Automated self checks](selfcheck.md)"
 
 - Run the command:
 
   ```bash
-  rosrun clover selfcheck.py
+  rosrun drona selfcheck.py
   ```
 
 ## Writing a program

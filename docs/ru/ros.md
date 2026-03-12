@@ -113,11 +113,11 @@ rostopic echo /mavros/state
 
 ```python
 import rospy
-from clover.srv import GetTelemetry
+from drona.srv import GetTelemetry
 
 rospy.init_node('my_ros_node')
 
-# Создаем обертку над сервисом get_telemetry пакета clover с типом GetTelemetry:
+# Создаем обертку над сервисом get_telemetry пакета drona с типом GetTelemetry:
 get_telemetry = rospy.ServiceProxy('get_telemetry', srv.GetTelemetry)
 
 # Вызываем сервис и получаем телеметрию квадрокоптера:

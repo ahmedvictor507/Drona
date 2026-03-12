@@ -6,7 +6,7 @@ See read more about [using rqt](rviz.md).
 
 ## Viewing in a browser
 
-To view a video-stream, you have to [connect to Wi-Fi network](wifi.md) of the Clover (`clover-xxxx`), navigate to page [http://192.168.11.1:8080/](http://192.168.11.1:8080/), and choose the topic.
+To view a video-stream, you have to [connect to Wi-Fi network](wifi.md) of the Drona (`drona-xxxx`), navigate to page [http://192.168.11.1:8080/](http://192.168.11.1:8080/), and choose the topic.
 
 ![Viewing web_video_server](../assets/web_video_server.png)
 
@@ -22,7 +22,7 @@ Parameters `width`, `height`, etc. re also available. Read more about `web_video
 
 To browse images with the rqt tools the user needs a computer with Ubuntu 20.04 and [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu).
 
-[Connect to the Clover Wi-Fi network](wifi.md) an run `rqt_image_view` with its IP-address:
+[Connect to the Drona Wi-Fi network](wifi.md) an run `rqt_image_view` with its IP-address:
 
 ```bash
 ROS_MASTER_URI=http://192.168.11.1:11311 rqt_image_view

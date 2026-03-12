@@ -10,13 +10,13 @@ Examples of ArUco markers:
 
 For rapid generation of markers for printing, you may use an online tool: http://chev.me/arucogen/.
 
-[Clover Raspberry Pi image](image.md) contains a pre-installed `aruco_pose` ROS package, which can be used for marker detection.
+[Drona Raspberry Pi image](image.md) contains a pre-installed `aruco_pose` ROS package, which can be used for marker detection.
 
 ## Modes of operation
 
-There are several preconfigured modes of operation for ArUco markers on the Clover drone:
+There are several preconfigured modes of operation for ArUco markers on the Drona drone:
 
 * [single marker detection and navigation](aruco_marker.md);
 * [map-based navigation](aruco_map.md).
 
-> **Info** Additional documentation for the `aruco_pose` ROS package is available [on GitHub](https://github.com/CopterExpress/clover/blob/master/aruco_pose/README.md).
+> **Info** Additional documentation for the `aruco_pose` ROS package is available [on GitHub](https://github.com/CopterExpress/drona/blob/master/aruco_pose/README.md).

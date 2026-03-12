@@ -68,11 +68,11 @@ my_travis_retry() {
   return $result
 }
 
-# TODO: 'kinetic-rosdep-clover.yaml' should add only if we use our repo?
+# TODO: 'kinetic-rosdep-drona.yaml' should add only if we use our repo?
 echo_stamp "Init rosdep"
 my_travis_retry rosdep init
 # FIXME: Re-add this after missing packages are built
-echo "yaml file:///etc/ros/rosdep/${ROS_DISTRO}-rosdep-clover.yaml" >> /etc/ros/rosdep/sources.list.d/10-clover.list
+echo "yaml file:///etc/ros/rosdep/${ROS_DISTRO}-rosdep-drona.yaml" >> /etc/ros/rosdep/sources.list.d/10-drona.list
 my_travis_retry rosdep update
 
 echo_stamp "Populate rosdep for ROS user"
@@ -80,8 +80,8 @@ my_travis_retry sudo -u pi rosdep update
 
 export ROS_IP='127.0.0.1' # needed for running tests
 
-# echo_stamp "Reconfiguring Clover repository for simplier unshallowing"
-cd /home/pi/catkin_ws/src/clover
+# echo_stamp "Reconfiguring Drona repository for simplier unshallowing"
+cd /home/pi/catkin_ws/src/drona
 git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 
 # This is sort of a hack to force "custom" packages to be installed - the ones built by COEX, linked against OpenCV 4.2
@@ -100,34 +100,34 @@ ros-${ROS_DISTRO}-cv-camera \
 ros-${ROS_DISTRO}-image-publisher \
 ros-${ROS_DISTRO}-web-video-server
 
-echo_stamp "Installing libboost-dev" # https://travis-ci.org/github/CopterExpress/clover/jobs/766318908#L6536
+echo_stamp "Installing libboost-dev" # https://travis-ci.org/github/CopterExpress/drona/jobs/766318908#L6536
 my_travis_retry apt-get install -y --no-install-recommends libboost-dev libboost-all-dev
 
-echo_stamp "Build and install Clover"
+echo_stamp "Build and install Drona"
 cd /home/pi/catkin_ws
 # Don't try to install gazebo_ros
 my_travis_retry rosdep install -y --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} --os=debian:buster \
   --skip-keys=gazebo_ros --skip-keys=gazebo_plugins
 my_travis_retry pip3 install wheel
-my_travis_retry pip3 install -r /home/pi/catkin_ws/src/clover/clover/requirements.txt
+my_travis_retry pip3 install -r /home/pi/catkin_ws/src/drona/drona/requirements.txt
 source /opt/ros/${ROS_DISTRO}/setup.bash
 # Don't build simulation plugins for actual drone
 catkin_make -j2 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 source devel/setup.bash
 
 echo_stamp "Install clever package (for backwards compatibility)"
-cd /home/pi/catkin_ws/src/clover/builder/assets/clever
+cd /home/pi/catkin_ws/src/drona/builder/assets/clever
 ./setup.py install
 rm -rf build  # remove build artifacts
 
-echo_stamp "Build Clover documentation"
-cd /home/pi/catkin_ws/src/clover
+echo_stamp "Build Drona documentation"
+cd /home/pi/catkin_ws/src/drona
 builder/assets/install_gitbook.sh
 gitbook install
 gitbook build
 # replace assets copy to assets symlink to save space
 rm -rf _book/assets && ln -s ../docs/assets _book/assets
-touch node_modules/CATKIN_IGNORE docs/CATKIN_IGNORE _book/CATKIN_IGNORE clover/www/CATKIN_IGNORE apps/CATKIN_IGNORE # ignore documentation files by catkin
+touch node_modules/CATKIN_IGNORE docs/CATKIN_IGNORE _book/CATKIN_IGNORE drona/www/CATKIN_IGNORE apps/CATKIN_IGNORE # ignore documentation files by catkin
 
 echo_stamp "Installing additional ROS packages"
 my_travis_retry apt-get install -y --no-install-recommends \
@@ -157,21 +157,21 @@ echo_stamp "Change permissions for catkin_ws"
 chown -Rf pi:pi /home/pi/catkin_ws
 
 echo_stamp "Update www"
-sudo -u pi sh -c ". devel/setup.sh && rosrun clover www"
+sudo -u pi sh -c ". devel/setup.sh && rosrun drona www"
 
 echo_stamp "Make \$HOME/examples symlink"
-ln -s "$(catkin_find clover examples --first-only)" /home/pi
+ln -s "$(catkin_find drona examples --first-only)" /home/pi
 chown -Rf pi:pi /home/pi/examples
 
 echo_stamp "Make systemd services symlinks"
-ln -s /home/pi/catkin_ws/src/clover/builder/assets/clover.service /lib/systemd/system/
-ln -s /home/pi/catkin_ws/src/clover/builder/assets/roscore.service /lib/systemd/system/
+ln -s /home/pi/catkin_ws/src/drona/builder/assets/drona.service /lib/systemd/system/
+ln -s /home/pi/catkin_ws/src/drona/builder/assets/roscore.service /lib/systemd/system/
 # validate
-[ -f /lib/systemd/system/clover.service ]
+[ -f /lib/systemd/system/drona.service ]
 [ -f /lib/systemd/system/roscore.service ]
 
 echo_stamp "Make udev rules symlink"
-ln -s "$(catkin_find clover udev --first-only)"/* /lib/udev/rules.d/
+ln -s "$(catkin_find drona udev --first-only)"/* /lib/udev/rules.d/
 
 echo_stamp "Setup ROS environment"
 cat << EOF >> /home/pi/.bashrc

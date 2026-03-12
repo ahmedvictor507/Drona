@@ -63,7 +63,7 @@
         { "from": "camera_setup/", "to": "en/camera_setup.html" },
         { "from": "power/", "to": "en/power.html" },
         { "from": "connection/", "to": "en/connection.html" },
-        { "from": "clover_vm/", "to": "en/simulation_vm.html" },
+        { "from": "drona_vm/", "to": "en/simulation_vm.html" },
         { "from": "gpio/", "to": "en/gpio.html" },
         { "from": "blocks/", "to": "en/blocks.html" },
         { "from": "red_circle/", "to": "en/camera.html" },

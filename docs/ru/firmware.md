@@ -6,7 +6,7 @@ Pixhawk, Pixracer и [COEX Pix](coex_pix.md) можно прошить, испо
 Прошивка для Клевера
 ---
 
-Для Клевера рекомендуется использование специальной сборки PX4, которая содержит необходимые исправления и более подходящие параметры по умолчанию. Используйте последний стабильный релиз в [GitHub-репозитории](https://github.com/CopterExpress/Firmware/releases), содержащий слово `clover`, например `v1.8.2-clover.4`.
+Для Клевера рекомендуется использование специальной сборки PX4, которая содержит необходимые исправления и более подходящие параметры по умолчанию. Используйте последний стабильный релиз в [GitHub-репозитории](https://github.com/CopterExpress/Firmware/releases), содержащий слово `drona`, например `v1.8.2-drona.4`.
 
 <div id="release" style="display:none">
 <p>Последний стабильный релиз: <strong><a id="download-latest-release"></a></strong>.</p>
@@ -17,7 +17,7 @@ Pixhawk, Pixracer и [COEX Pix](coex_pix.md) можно прошить, испо
 </ul>
 </div>
 
-> **Warning** Если вы используете прошивку с версией ниже, чем *v1.10* (например `v1.8.2-clover.13`), то во избежание ошибок конфигурирования полётного контроллера, используйте [QGroundControl версии *v4.2.0*](https://github.com/mavlink/qgroundcontrol/releases/tag/v4.2.0) (или ниже). См. [подробную информацию](https://docs.px4.io/v1.11/en/config/battery.html#parameter-migration-notes) об изменениях в параметрах, которые вызывают ошибки в более новых версиях QGroundControl.
+> **Warning** Если вы используете прошивку с версией ниже, чем *v1.10* (например `v1.8.2-drona.13`), то во избежание ошибок конфигурирования полётного контроллера, используйте [QGroundControl версии *v4.2.0*](https://github.com/mavlink/qgroundcontrol/releases/tag/v4.2.0) (или ниже). См. [подробную информацию](https://docs.px4.io/v1.11/en/config/battery.html#parameter-migration-notes) об изменениях в параметрах, которые вызывают ошибки в более новых версиях QGroundControl.
 
 <script type="text/javascript">
     // get latest release from GitHub
@@ -27,8 +27,8 @@ Pixhawk, Pixracer и [COEX Pix](coex_pix.md) можно прошить, испо
         // look for stable release
         let stable;
         for (let release of data) {
-            let clover = (release.name.indexOf('clover') != -1) || (release.name.indexOf('clever') != -1);
-            if (clover && !release.prerelease && !release.draft) {
+            let drona = (release.name.indexOf('drona') != -1) || (release.name.indexOf('clever') != -1);
+            if (drona && !release.prerelease && !release.draft) {
                 stable = release;
                 break;
             }

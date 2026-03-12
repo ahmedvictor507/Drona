@@ -405,7 +405,7 @@ Optical stabilization is the most important and challenging part of our project.
 ### 5.2. First steps {#first-steps}
 
 And as we couldn't predict the possibility of accomplishing our task, first of all, we started to think about the solution for the stabilization system. Afterwards, we settled with the stabilization using augmented reality tags. Firstly, it won't take much finances as we do not need GPS or RTK systems and it will be accurate enough to accomplish its purpose.
-Our first idea was to attach Raspberry Pi with Liberty_X as it was embodied in COEX Clover and to let Raspberry Pi handle all of the maths.
+Our first idea was to attach Raspberry Pi with Liberty_X as it was embodied in COEX Drona and to let Raspberry Pi handle all of the maths.
 
 First optical stabilization prototype test (clickable):
 

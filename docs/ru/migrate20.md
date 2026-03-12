@@ -2,7 +2,7 @@
 
 [Образ для RPi](image.md) версии 0.20 содержит в себе значительные изменения по сравнению с версией 0.19. При переходе на новую версию обратите внимание на разъяснения, приведенные ниже.
 
-## Пакет `clever` переименован в `clover`
+## Пакет `clever` переименован в `drona`
 
 Необходимо заменить все импорты модуля в Python-скриптах.
 
@@ -34,7 +34,7 @@ navigate(x=0, y=0, z=1, frame_id='body', auto_arm=True)
 
 ```python
 import rospy
-from clover import srv
+from drona import srv
 from std_srvs.srv import Trigger
 
 rospy.init_node('flight')
@@ -52,7 +52,7 @@ land = rospy.ServiceProxy('land', Trigger)
 navigate(x=0, y=0, z=1, frame_id='body', auto_arm=True)
 ```
 
-## systemd-сервис `clever` переименован в `clover`
+## systemd-сервис `clever` переименован в `drona`
 
 Для перезапуска платформы теперь вместо команды:
 
@@ -63,18 +63,18 @@ sudo systemctl restart clever
 используется команда:
 
 ```bash
-sudo systemctl restart clover
+sudo systemctl restart drona
 ```
 
 ## Путь к файлам платформы изменен
 
-Каталог `~/catkin_ws/src/clever/` переименован в `~/catkin_ws/src/clover`. Таким образом, файлы конфигурации (`.launch`) необходимо редактировать по новому пути.
+Каталог `~/catkin_ws/src/clever/` переименован в `~/catkin_ws/src/drona`. Таким образом, файлы конфигурации (`.launch`) необходимо редактировать по новому пути.
 
-Например, файл `~/catkin_ws/src/clever/clever/launch/clever.launch` теперь называется `~/catkin_ws/src/clover/clover/launch/clover.launch`.
+Например, файл `~/catkin_ws/src/clever/clever/launch/clever.launch` теперь называется `~/catkin_ws/src/drona/drona/launch/drona.launch`.
 
 ## Настройки Wi-Fi сети
 
-SSID Wi-Fi сети изменен на `clover-XXXX` (где X – случайная цифра), пароль изменен на `cloverwifi`.
+SSID Wi-Fi сети изменен на `drona-XXXX` (где X – случайная цифра), пароль изменен на `dronawifi`.
 
 ## Способ настройки ориентации камеры изменен
 

@@ -1,38 +1,38 @@
 Автозапуск ПО
 ===
 
-> **Note** В версии образа **0.20** пакет и сервис `clever` был переименован в `clover`. Для более ранних версий см. документацию для версии [**0.19**](https://github.com/CopterExpress/clover/blob/v0.19/docs/ru/autolaunch.md).
+> **Note** В версии образа **0.20** пакет и сервис `clever` был переименован в `drona`. Для более ранних версий см. документацию для версии [**0.19**](https://github.com/CopterExpress/drona/blob/v0.19/docs/ru/autolaunch.md).
 
 systemd
 ---
 
 Основная документация: https://wiki.archlinux.org/index.php/Systemd_(Русский).
 
-Все автоматически стартуемое ПО Клевера запускается в виде systemd-сервиса `clover.service`.
+Все автоматически стартуемое ПО Клевера запускается в виде systemd-сервиса `drona.service`.
 
 Сервис может быть перезапущен командой `systemctl`:
 
 ```bash
-sudo systemctl restart clover
+sudo systemctl restart drona
 ```
 
 Текстовый вывод ПО можно просмотреть с помощью команды `journalctl`:
 
 ```bash
-journalctl -u clover
+journalctl -u drona
 ```
 
 Для того чтобы запустить ПО Клевера непосредственно в текущей консольной сессии, вы можете использовать `roslaunch`:
 
 ```bash
-sudo systemctl stop clover
-roslaunch clover clover.launch
+sudo systemctl stop drona
+roslaunch drona drona.launch
 ```
 
 Вы можете выключить автозапуск ПО Клевера с помощью команды `disable`:
 
 ```bash
-sudo systemctl disable clover
+sudo systemctl disable drona
 ```
 
 roslaunch
@@ -40,12 +40,12 @@ roslaunch
 
 Основная документация: http://wiki.ros.org/roslaunch.
 
-Список объявленных для запуска нод / программ указывается в файле `/home/pi/catkin_ws/src/clover/clover/launch/clover.launch`.
+Список объявленных для запуска нод / программ указывается в файле `/home/pi/catkin_ws/src/drona/drona/launch/drona.launch`.
 
-Вы можете добавить собственную ноду в список автозапускаемых. Для этого разместите ваш запускаемый файл (например, `my_program.py`) в каталог `/home/pi/catkin_ws/src/clover/clover`. Затем добавьте запуск вашей ноды в `clover.launch`, например:
+Вы можете добавить собственную ноду в список автозапускаемых. Для этого разместите ваш запускаемый файл (например, `my_program.py`) в каталог `/home/pi/catkin_ws/src/drona/drona`. Затем добавьте запуск вашей ноды в `drona.launch`, например:
 
 ```xml
-<node name="my_program" pkg="clover" type="my_program.py" output="screen"/>
+<node name="my_program" pkg="drona" type="my_program.py" output="screen"/>
 ```
 
 Запускаемый файл должен иметь *permission* на запуск:

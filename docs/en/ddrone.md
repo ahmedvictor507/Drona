@@ -17,7 +17,7 @@ People strive to teach artificial intelligence everything they can do themselves
 To complete the project you need to have in stock:
 
 - spray paint
-- clover 4 kit
+- drona 4 kit
 - servo MG90S
 - 3D printer
 - spray can extension straw
@@ -70,12 +70,12 @@ Download this [repository](https://github.com/PerizatKurmanbaeva/visual_ddrone) 
 
 ```bash
 scp visual_ddrone-master.zip pi@192.168.11.1:/home/pi
-cd catkin_ws/src/clover/clover/www
+cd catkin_ws/src/drona/drona/www
 unzip /home/pi/visual_ddrone-master.zip .
 mv visual_ddrone-master ddrone
 ```
 
-Now to open the web interface, click on the link [http://192.168.11.1/clover/drone](http://192.168.11.1/clover/drone).
+Now to open the web interface, click on the link [http://192.168.11.1/drona/drone](http://192.168.11.1/drona/drone).
 
 ## Web interface
 

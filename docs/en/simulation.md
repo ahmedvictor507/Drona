@@ -1,6 +1,6 @@
 # Simulation overview
 
-The Clover simulation environment allows users to run and debug their code within a simulator while using most of the features available on the real drone. The simulation utilizes [PX4 SITL mode](sitl.md) and uses the same ROS code as the real drone. Most hardware is simulated as well.
+The Drona simulation environment allows users to run and debug their code within a simulator while using most of the features available on the real drone. The simulation utilizes [PX4 SITL mode](sitl.md) and uses the same ROS code as the real drone. Most hardware is simulated as well.
 
 <img src="../assets/simulator.jpg" width=600 class=center>
 
@@ -8,8 +8,8 @@ The Clover simulation environment allows users to run and debug their code withi
 
 Basic, user-installable environment includes:
 
-* high-quality Clover 4 visual model;
-* Gazebo plugins for Clover-specific hardware (e.g. LED strip);
+* high-quality Drona 4 visual model;
+* Gazebo plugins for Drona-specific hardware (e.g. LED strip);
 * modification-friendly [`xacro`](https://wiki.ros.org/xacro) drone descriptions;
 * sample models and worlds;
 * [`roslaunch`](https://wiki.ros.org/roslaunch) files for quick simulation launching and configuration.
@@ -18,7 +18,7 @@ Additionally, a [virtual machine image](simulation_vm.md) that mimics the real d
 
 * easy access to the simulation environment;
 * Visual Studio Code editor, preconfigured to work with ROS packages;
-* Monkey web server for web-based Clover plugins;
+* Monkey web server for web-based Drona plugins;
 * always-running `roscore` service;
 * ROS GUI tools (`rviz`, `rqt`).
 

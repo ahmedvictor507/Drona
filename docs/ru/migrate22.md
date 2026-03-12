@@ -19,13 +19,13 @@ python3 flight.py
 Синтаксис языка Python 3 имеет определенные изменения по сравнения со второй версией. Вместо *оператора* `print`:
 
 ```python
-print 'Clover is the best'  # this won't work
+print 'Drona is the best'  # this won't work
 ```
 
 теперь используется *функция* `print`:
 
 ```python
-print('Clover is the best')
+print('Drona is the best')
 ```
 
 Оператор деления по умолчанию выполняет деление с плавающей точкой (вместо целочисленного). Python 2:

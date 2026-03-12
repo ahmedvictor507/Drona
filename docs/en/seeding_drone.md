@@ -25,7 +25,7 @@ We achieved to do small seeding missions but we faced some problem about autonom
 We coated our battery to protect it from cold weather, seeding missions need to start in winter since apple seeds need to stay in a cold place for some time to break dormancy.
 
 - [Seed capsules](#seed-capsules)
-- [How to assemble seeding mechanism to clover 4.2 drone](#how-to-assemble-seeding-mechanism-to-clover-42-drone)
+- [How to assemble seeding mechanism to drona 4.2 drone](#how-to-assemble-seeding-mechanism-to-drona-42-drone)
 - [How to control the seeding mechanism](#how-to-control-the-seeding-mechanism)
 - [Programming](#programming)
 
@@ -70,7 +70,7 @@ Steps for making seed balls:
 3. The clay and organic soil texture should be wet but not sticky
 4. Take a bit of mixture and roll it into balls. Test the ball by throwing it on a flat surface. If the ball doesn’t break easily, it means it has got good bonding.
 5. Seed balls must be a perfectly round shape otherwise they will be stuck while throwing with the quadcopter
-6. Insert seeds (1 to 2 seeds per seed ball for permanent trees such as mahogany, sandalwood, orange, moringa…) (± 5 seeds per seed ball for vegetables, flowers, grasses, clovers…)
+6. Insert seeds (1 to 2 seeds per seed ball for permanent trees such as mahogany, sandalwood, orange, moringa…) (± 5 seeds per seed ball for vegetables, flowers, grasses, dronas…)
 7. Dry the seed balls for one to two days in a shaded area, if properly dry, the seed balls will be protected from external predators such as chickens, birds, rats…
 
 <img src="../assets/seeding_drone/seedcapsules/3.jpg" width="250px" class="center"/>
@@ -107,11 +107,11 @@ REREFENCES
 <https://web.archive.org/web/20090115211020/http://www.rmaf.org.ph/Awardees/Biography/BiographyFukuokaMas.htm>
 <http://www.guerrillagardening.org/ggseedbombs.html>
 
-## How to assemble seeding mechanism to Clover 4.2 drone
+## How to assemble seeding mechanism to Drona 4.2 drone
 
 ### How to assemble seeding mechanism
 
-After finishing step 4, at section Installing guard of Clover 4.2 assembly.
+After finishing step 4, at section Installing guard of Drona 4.2 assembly.
 
 1. Install the Lower Tank Holders to top Deck mount and fix with the M3x8 screws.
 
@@ -153,9 +153,9 @@ We coated the battery to protect it from the cold weather:
 
 Electronic part of seed dropping mechanism consists of:
 
-- Raspberry Pi 4 B of COEX Clover 4.
+- Raspberry Pi 4 B of COEX Drona 4.
 - 2 Micro Servo Motors SG90.
-- PDB (Power Distribution Board) of COEX Clover 4.
+- PDB (Power Distribution Board) of COEX Drona 4.
 
 Servo motor’s signal pins are connected to Raspberry Pi’s Hardware PWM pins 32 and 33, and power is taken from Power Distribution Board (5 V).
 
@@ -220,7 +220,7 @@ Simple mission code:
 import threading
 import time
 import rospy
-from clover import srv
+from drona import srv
 from std_srvs.srv import Trigger
 import RPi.GPIO as GPIO
 
@@ -317,6 +317,6 @@ GPIO.cleanup()
 
 ## Developed by Team MINIONS
 
-Special thanks to International Ala-Too University for funding the Clover 4 kits.
+Special thanks to International Ala-Too University for funding the Drona 4 kits.
 
 <img src="../assets/seeding_drone/ala-too.png">

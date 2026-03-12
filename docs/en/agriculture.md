@@ -32,7 +32,7 @@ shape = 'undefined'
 culture = ""
 ```
 
-To implement computer vision algorithms, it is recommended to use the OpenCV library preinstalled on the Clover image.
+To implement computer vision algorithms, it is recommended to use the OpenCV library preinstalled on the Drona image.
 Create a subscriber for the topic with the image from the main camera for processing using OpenCV:
 
 ```python

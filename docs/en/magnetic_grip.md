@@ -83,7 +83,7 @@ void loop() {
 }
 ```
 
-To monitor the status of the electromagnetic gripper, you can connect the *ws281x* LED strip (included to Clover kit). Connect it to power +5v – 5v, ground GND – GND, and signal wire DIN – Arduino D12.
+To monitor the status of the electromagnetic gripper, you can connect the *ws281x* LED strip (included to Drona kit). Connect it to power +5v – 5v, ground GND – GND, and signal wire DIN – Arduino D12.
 
 To control the magnet and monitor it using the LED strip, use the following code:
 

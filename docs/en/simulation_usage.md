@@ -1,6 +1,6 @@
 # Using the simulator
 
-The Clover simulation environment allows the user to test their code without any risk of equipment damage. Additionally, the [virtual machine](simulation_vm.md)-based environment has additional (non-ROS) services that are present on a real drone, like Monkey web server.
+The Drona simulation environment allows the user to test their code without any risk of equipment damage. Additionally, the [virtual machine](simulation_vm.md)-based environment has additional (non-ROS) services that are present on a real drone, like Monkey web server.
 
 ## Running the simulation
 
@@ -9,12 +9,12 @@ After [setting up the simulation packages](simulation_native.md) or [importing a
 ```bash
 # Be sure to activate your workspace first
 source ~/catkin_ws/devel/setup.bash
-roslaunch clover_simulation simulator.launch
+roslaunch drona_simulation simulator.launch
 ```
 
 > **Note** Alternatively, if you are using the VM, just double-click on the `Gazebo PX4` icon on the desktop.
 
-This will launch Gazebo server and client, the PX4 SITL binary and Clover nodes. The terminal in which the command was run will display diagnostic messages from the nodes and PX4, and will accept input for the PX4 command interpreter:
+This will launch Gazebo server and client, the PX4 SITL binary and Drona nodes. The terminal in which the command was run will display diagnostic messages from the nodes and PX4, and will accept input for the PX4 command interpreter:
 
 ![Gazebo simulation screenshot](../assets/simulation_usage/01_running_gazebo.jpg)
 
@@ -28,7 +28,7 @@ You can also use [our simplified OFFBOARD control](simple_offboard.md) to contro
 
 ## Configuring the simulation
 
-The simulation can be configured by passing additional arguments to the `roslaunch` command or by changing the `~/catkin_ws/src/clover/clover_simulation/launch/simulator.launch` file. Nodes that provide [ArUco detection](aruco.md), [optical flow calculation](optical_flow.md) and other services can be configured by changing their respective `.launch` files, just like on a real drone.
+The simulation can be configured by passing additional arguments to the `roslaunch` command or by changing the `~/catkin_ws/src/drona/drona_simulation/launch/simulator.launch` file. Nodes that provide [ArUco detection](aruco.md), [optical flow calculation](optical_flow.md) and other services can be configured by changing their respective `.launch` files, just like on a real drone.
 
 ![vscode with simulator.launch open](../assets/simulation_usage/04_vscode_config.jpg)
 
@@ -52,11 +52,11 @@ If you don't need the camera when flying using GPS, it may be disabled in `simul
 
 ### Another sensors
 
-If you wish to add additional sensors or change their placement, you will have to change the drone description. The description file is located in `~/catkin_ws/src/clover/clover_description/urdf/clover/clover4.xacro`, and uses the [xacro](http://wiki.ros.org/xacro) format to build URDF description.
+If you wish to add additional sensors or change their placement, you will have to change the drone description. The description file is located in `~/catkin_ws/src/drona/drona_description/urdf/drona/drona4.xacro`, and uses the [xacro](http://wiki.ros.org/xacro) format to build URDF description.
 
 ### Changing the default world
 
-Gazebo plugins for the drone currently require the `real_time_update_rate` world parameter to be 250, and `max_step_size` to be 0.004. Using other values will not work. Consider using `~/catkin_ws/src/clover/clover_simulation/resources/worlds/clover.world` as a base.
+Gazebo plugins for the drone currently require the `real_time_update_rate` world parameter to be 250, and `max_step_size` to be 0.004. Using other values will not work. Consider using `~/catkin_ws/src/drona/drona_simulation/resources/worlds/drona.world` as a base.
 
 ## Performance suggestions
 
@@ -64,9 +64,9 @@ Gazebo simulation environment is resource-intensive, and requires a fast CPU and
 
 ### Use `throttling_camera` plugin
 
-By default, Gazebo does not slow simulation down for visual sensors. This can be remedied by using the `throttling_camera` plugin from `clover_simulation`.
+By default, Gazebo does not slow simulation down for visual sensors. This can be remedied by using the `throttling_camera` plugin from `drona_simulation`.
 
-You can enable it for the drone by changing the `maintain_camera_rate` argument to `true` in `clover_description/launch/spawn_drone.launch`:
+You can enable it for the drone by changing the `maintain_camera_rate` argument to `true` in `drona_description/launch/spawn_drone.launch`:
 
 ```xml
     <!-- Slow simulation down to maintain camera rate -->
@@ -86,7 +86,7 @@ You should set its value to the actual real time factor that you get with `throt
 In this example you should set `PX4_SIM_SPEED_FACTOR` to `0.42` when launching the simulation:
 
 ```bash
-PX4_SIM_SPEED_FACTOR=0.42 roslaunch clover_simulation simulator.launch
+PX4_SIM_SPEED_FACTOR=0.42 roslaunch drona_simulation simulator.launch
 ```
 
 > **Note** If you are using the VM, it may be convenient to put the value in the Gazebo desktop shortcut. Right-click on the Gazebo icon, select "Properties..." and add `PX4_SIM_SPEED_FACTOR=0.42` to the Command field as follows:
@@ -103,7 +103,7 @@ Do note that you should not allocate more resources than you have on your host h
 In order to change the map of ArUco-markers in the simulator, you can use the following command:
 
 ```bash
-rosrun clover_simulation aruco_gen --single-model --source-world=$(catkin_find clover_simulation resources/worlds/clover.world) $(catkin_find aruco_pose map/map.txt) > $(catkin_find clover_simulation resources/worlds/clover_aruco.world)
+rosrun drona_simulation aruco_gen --single-model --source-world=$(catkin_find drona_simulation resources/worlds/drona.world) $(catkin_find aruco_pose map/map.txt) > $(catkin_find drona_simulation resources/worlds/drona_aruco.world)
 ```
 
 In this example, `map.txt` is the name of markers name.

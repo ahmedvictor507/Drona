@@ -1,12 +1,12 @@
-# Contribution to Clover
+# Contribution to Drona
 
-Clover is mostly an [open source](https://en.wikipedia.org/wiki/Open-source_software) and [open hardware](https://en.wikipedia.org/wiki/Open-source_hardware) project aimed at lowering the entry threshold to development of the projects related to flying robotics. You can contribute to the project by offering fixes and improvements for Clover documentation and software.
+Drona is mostly an [open source](https://en.wikipedia.org/wiki/Open-source_software) and [open hardware](https://en.wikipedia.org/wiki/Open-source_hardware) project aimed at lowering the entry threshold to development of the projects related to flying robotics. You can contribute to the project by offering fixes and improvements for Drona documentation and software.
 
-> **Note** To offer changes to Clover documentation or SW, you should have an account at [GitHub](https://github.com).
+> **Note** To offer changes to Drona documentation or SW, you should have an account at [GitHub](https://github.com).
 
 ## Markdown
 
-All Clover documentation is written in the widespread [Markdown](https://en.wikipedia.org/wiki/Markdown) format. There are many Markdown guides on the Internet.
+All Drona documentation is written in the widespread [Markdown](https://en.wikipedia.org/wiki/Markdown) format. There are many Markdown guides on the Internet.
 
 In Russian: https://guides.hexlet.io/markdown/.
 
@@ -22,7 +22,7 @@ For a local build of a static documentation website, use the [`gitbook-cli`](htt
 
 If you have found an error in the documentation or if you want to improve it, use the **Pull Request** mechanism.
 
-1. Find a file with the article you want in the repository – https://github.com/CopterExpress/clover/tree/master/docs.
+1. Find a file with the article you want in the repository – https://github.com/CopterExpress/drona/tree/master/docs.
 2. Click "Edit".
 
     <img src="../assets/github-edit.png" alt="GitHub Edit">
@@ -36,18 +36,18 @@ More information about Pull Requests is available [at GitHub](https://help.githu
 
 ## Contributing a new article
 
-> **Note** If you've made your own project based on Clover, you can add an article about it to the "Clover-based projects" section.
+> **Note** If you've made your own project based on Drona, you can add an article about it to the "Drona-based projects" section.
 
-Prepare your article and send it as a pull request to the [Clover repository](https://github.com/CopterExpress/clover).
+Prepare your article and send it as a pull request to the [Drona repository](https://github.com/CopterExpress/drona).
 
-1. Fork the Clover repository:
+1. Fork the Drona repository:
 
     <img src="../assets/github-fork.png" alt="GitHub Fork">
 
 2. Check out the freshly-forked repository on your computer:
 
     ```bash
-    git clone https://github.com/<USERNAME>/clover.git
+    git clone https://github.com/<USERNAME>/drona.git
     ```
 
 3. Open the directory with the source code checkout and create a new branch for your article (for example, `new-article`):
@@ -75,7 +75,7 @@ Prepare your article and send it as a pull request to the [Clover repository](ht
 
     ```bash
     git add docs/
-    git commit -m "Add new article for Clover"
+    git commit -m "Add new article for Drona"
     ```
 
 8. Upload your branch to your forked repository on GitHub:
@@ -84,14 +84,14 @@ Prepare your article and send it as a pull request to the [Clover repository](ht
     git push -u origin new-article
     ```
 
-9. Open your repository on GitHub and send a `pull request` from your branch to Clover:
+9. Open your repository on GitHub and send a `pull request` from your branch to Drona:
 
     <img src="../assets/github-pull-request.png" alt="GitHub Pull Request">
 
     <img src="../assets/github-pull-request-create.png" alt="GitHub Create Pull">
 
 10. Wait for the review, be ready to make changes if needed.
-11. Look at your new and useful article at https://clover.coex.tech !
+11. Look at your new and useful article at https://drona.coex.tech !
 
 ## Easy way
 
@@ -99,4 +99,4 @@ If the above instructions are too difficult for you, send your fixes and new art
 
 ## Publishing packages
 
-You also can publish a package, that extends Clover functionality, into the official [COEX Debian repository](packages.md).
+You also can publish a package, that extends Drona functionality, into the official [COEX Debian repository](packages.md).

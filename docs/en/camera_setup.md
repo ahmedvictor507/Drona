@@ -1,6 +1,6 @@
 # Camera setup
 
-> **Note** The following applies to [image version](image.md) **0.20** and up. See [previous version of the article](https://github.com/CopterExpress/clover/blob/v0.19/docs/en/camera_frame.md) for older images.
+> **Note** The following applies to [image version](image.md) **0.20** and up. See [previous version of the article](https://github.com/CopterExpress/drona/blob/v0.19/docs/en/camera_frame.md) for older images.
 
 Computer vision modules (like [ArUco markers](aruco.md) and [Optical Flow](optical_flow.md)) require adjusting the camera focus and set up camera position and orientation relative to the drone body. Optional camera calibration can improve their quality of performance.
 
@@ -19,7 +19,7 @@ In order to focus the camera lens, do the following:
 
 ## Setting the camera position {#frame}
 
-Position and orientation of the main camera is [set in the](cli.md#editing) `~/catkin_ws/src/clover/clover/launch/main_camera.launch` file:
+Position and orientation of the main camera is [set in the](cli.md#editing) `~/catkin_ws/src/drona/drona/launch/main_camera.launch` file:
 
 ```xml
 <arg name="direction_z" default="down"/> <!-- direction the camera points: down, up -->

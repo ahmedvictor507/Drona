@@ -63,13 +63,13 @@ DroMap project consists mainly of two major components: the drone and the drone 
 
 #### Hardware selection
 
-##### COEX Clover Drone kit
+##### COEX Drona Drone kit
 
-Clover is a complete STEM educational programmable drone kit which includes unassembled quadcopter with four propellers and open-source software.
+Drona is a complete STEM educational programmable drone kit which includes unassembled quadcopter with four propellers and open-source software.
 
 * Limitless possibilities of a fully programmable drone (Open Source).
 * Drone can operate stably without GPS.
-* The Clover platform exploits the ROS framework.
+* The Drona platform exploits the ROS framework.
 * Made especially for Indoor flights.
 
 ##### Slamtec RPLiDAR A1M8
@@ -201,7 +201,7 @@ The drone is assembled and configured correctly to accomplish the autonomous map
 
 <img src="../assets/dromap/3.jpeg" width=400 class="center zoom">
 
-To set up the drone ready for mapping, the raspberry pi image created by COEX was installed on the micro-SD card. COEX Raspberry Pi image, COEX pixracer image and COEX virtual machine were selected as they contain all the necessary tools and packages to work efficiently with clover platform. The installed platform is based on Raspbian operating system and ROS. After flashing the image on the SD, the next step is to connect clover to Wi-Fi.
+To set up the drone ready for mapping, the raspberry pi image created by COEX was installed on the micro-SD card. COEX Raspberry Pi image, COEX pixracer image and COEX virtual machine were selected as they contain all the necessary tools and packages to work efficiently with drona platform. The installed platform is based on Raspbian operating system and ROS. After flashing the image on the SD, the next step is to connect drona to Wi-Fi.
 
 #### Network Setup
 
@@ -209,7 +209,7 @@ The drone produces a map of an unknown indoor environment by sending data receiv
 
 1. There must be a full bidirectional communication between all the nodes.
 2. Every component in the network must advertise its name.
-3. In ROS network one of the components must be declared as the ROS master. Specifically, the ROS master is the drone (Clover-6064).
+3. In ROS network one of the components must be declared as the ROS master. Specifically, the ROS master is the drone (Drona-6064).
 4. All ROS packages needed in the project, must use the ROS master.
 
 All these requirements are fulfilled in our design.

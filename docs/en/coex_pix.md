@@ -1,6 +1,6 @@
 # COEX Pix
 
-The **COEX Pix** flight controller is a modified [Pixracer](https://docs.px4.io/master/en/flight_controller/pixracer.html) FCU. It is a part of the **Clover 4** quadrotor kit.
+The **COEX Pix** flight controller is a modified [Pixracer](https://docs.px4.io/master/en/flight_controller/pixracer.html) FCU. It is a part of the **Drona 4** quadrotor kit.
 
 > **Hint** The source files of the COEX Pix flight controller are [published](https://github.com/CopterExpress/hardware/tree/master/COEX%20Pix) under the CC BY-NC-SA license.
 
@@ -45,7 +45,7 @@ The **COEX Pix** flight controller is a modified [Pixracer](https://docs.px4.io/
 
 ### Mounting suggestions
 
-**Important**: The board is meant to be installed with a non-standard orientation (roll 180º, yaw 90º) on the Clover airframe. Therefore, the `SENS_BOARD_ROT` PX4 parameter should be set to `ROLL 180, YAW 90`.
+**Important**: The board is meant to be installed with a non-standard orientation (roll 180º, yaw 90º) on the Drona airframe. Therefore, the `SENS_BOARD_ROT` PX4 parameter should be set to `ROLL 180, YAW 90`.
 
 ### Usage notes
 
